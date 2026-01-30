@@ -49,7 +49,6 @@ public class PlayerMovement : MonoBehaviour
 
         if (moveDirection == Vector3.zero)
         {
-            Debug.Log("ur movin'");
             if (moveDirection.x == 0 && moveDirection.z == 0 && rb.linearVelocity.x == 0 && rb.linearVelocity.z == 0)
             {
                 rb.linearVelocity += new Vector3(rb.linearVelocity.x/deccelerationSpeed, 0, rb.linearVelocity.z/2);
@@ -81,7 +80,6 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.transform.CompareTag("Floor"))
         {
-            Debug.Log("Ifed");
             onGround = false;
         }
     }
