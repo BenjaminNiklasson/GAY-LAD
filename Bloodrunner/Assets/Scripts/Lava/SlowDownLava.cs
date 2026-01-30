@@ -12,6 +12,7 @@ public class SlowDownLava : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Lavahit!");
         if (other.transform.CompareTag("Lava") && lavaSlowed == false)
         {
             lavaRise.lavaRiseSpeed = lavaRiseSpeedOriginal;
