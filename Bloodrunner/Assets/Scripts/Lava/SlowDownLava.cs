@@ -10,9 +10,9 @@ public class SlowDownLava : MonoBehaviour
         lavaRise = GameObject.FindWithTag("Lava").GetComponent<LavaRise>();
         lavaRiseSpeedOriginal = lavaRise.lavaRiseSpeed;
     }
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.transform.CompareTag("Lava") && lavaSlowed == false)
+        if (other.transform.CompareTag("Lava") && lavaSlowed == false)
         {
             lavaRise.lavaRiseSpeed = lavaRiseSpeedOriginal;
             lavaSlowed = true;
