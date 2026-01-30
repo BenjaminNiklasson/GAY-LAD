@@ -15,7 +15,7 @@ public class PlayerDeath : MonoBehaviour
     {
         if (collision.transform.CompareTag("Lava"))
         {
-            globals.PlayerDeath();
+            globals.PlayerDeathGlobal();
         }
     }
 }
