@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7515184840274142651}
   - component: {fileID: 4710942865681563192}
   - component: {fileID: 2897403555380938608}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -221,6 +221,7 @@ MonoBehaviour:
       m_Action: Player Controls
       m_Flags: 8
     m_Flags: 0
+  moveDirection: {x: 0, y: 0, z: 0}
   playerSpeed: 3
   jumpForce: 3
   maxVelocity: 9
