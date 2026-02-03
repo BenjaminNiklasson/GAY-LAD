@@ -6,7 +6,8 @@ public class Globals : MonoBehaviour
 {
     public Vector3 respawnPoint { get; set; }
     [SerializeField] GameObject playerPrefab;
-    public GameObject currentPlayer { get; set; }
+    [SerializeField] public GameObject currentPlayer;
+    [SerializeField] GameObject playerLavaLight;
 
     public void Start()
     {
