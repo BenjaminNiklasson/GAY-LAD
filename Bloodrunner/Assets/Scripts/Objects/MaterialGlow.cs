@@ -7,17 +7,19 @@ public class MaterialGlow : MonoBehaviour
 {
     [SerializeField] float _glowDivider;
     Renderer _renderer;
+    Material _material;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         _renderer = gameObject.GetComponent<MeshRenderer>();
+        _material = _renderer.material;
+        _renderer.material = _material;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-        DynamicGI.SetEmissive(_renderer, _renderer.material.color / ((transform.position.y - GameObject.FindGameObjectWithTag("Lava").transform.position.y)*_glowDivider));
+        _material.SetColor("_EmissionColor", _material.color * (_glowDivider / (transform.position.y - GameObject.FindGameObjectWithTag("Lava").transform.position.y)));
     }
 }
