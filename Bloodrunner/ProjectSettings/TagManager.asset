@@ -9,6 +9,7 @@ TagManager:
   - Lava
   - Globals
   - CineMachineCamera
+  - PlayerLavaLight
   layers:
   - Default
   - TransparentFX
