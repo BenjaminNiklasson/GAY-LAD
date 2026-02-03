@@ -25,12 +25,14 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("Level_4");
     }
-    public void Die()
-    {
+    
 
+    public void ExitGame () 
+        {
+        Application.Quit();
+        Debug.Log("The application has been quit (Hopefully)");
+        }
 
-
-    }
 
     public void RestartLevel()
     {
