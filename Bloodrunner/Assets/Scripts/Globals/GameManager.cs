@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
@@ -5,27 +6,36 @@ public class GameManager : MonoBehaviour
     //PlayerPrefs.SetInt("Name", (yourBool? 1 : 0));
     //yourBool = (PlayerPrefs.GetInt("Name") != 0);
 
-    public float restartDelay = 1f;
+
+    public UIManager uiManager;
+
+    public float startLevelDelay = 2f;
+
+   
+
+
+    //Starts a coroutine for timing.
+    public void StartLevel(string sceneName)
+    {
+
+        StartCoroutine(StartLevelRoutine(sceneName));
+    }
+
+    //Starts the StartLevelRoutine.
+    IEnumerator StartLevelRoutine(string sceneName)
+    {
+        //Calls the ui Manager to trigger the fade to black effect.
+        uiManager.FadeToBlack();
+
+
+        //Waits the amount of time designated at the startLevelDelay float variable.
+        yield return new WaitForSeconds(startLevelDelay);
+
+        SceneManager.LoadScene(sceneName);
+    }
 
 
 
-    public void StartLevelOne()
-    {
-        SceneManager.LoadScene("Level_1");
-    }
-    public void StartLevelTwo()
-    {
-        SceneManager.LoadScene("Level_2");
-    }
-    public void StartLevelThree()
-    {
-        SceneManager.LoadScene("Level_3");
-    }
-    public void StartLevelFour()
-    {
-        SceneManager.LoadScene("Level_4");
-    }
-    
 
     public void ExitGame () 
         {
@@ -34,11 +44,7 @@ public class GameManager : MonoBehaviour
         }
 
 
-    public void RestartLevel()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
-
+  
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -48,6 +54,8 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+      
+      
+
     }
 }
