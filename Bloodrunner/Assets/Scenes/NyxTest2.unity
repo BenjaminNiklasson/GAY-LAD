@@ -230,6 +230,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &94618832 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6462513416971932536, guid: e90a477d4d9f1cd4b9d2e8443fe011e5, type: 3}
+  m_PrefabInstance: {fileID: 970926638}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &102684900
 GameObject:
   m_ObjectHideFlags: 0
@@ -1465,6 +1470,75 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &970926638
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1129310789}
+    m_Modifications:
+    - target: {fileID: 5973080540721351106, guid: e90a477d4d9f1cd4b9d2e8443fe011e5, type: 3}
+      propertyPath: m_Name
+      value: Lava Animation
+      objectReference: {fileID: 0}
+    - target: {fileID: 6462513416971932536, guid: e90a477d4d9f1cd4b9d2e8443fe011e5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.044234063
+      objectReference: {fileID: 0}
+    - target: {fileID: 6462513416971932536, guid: e90a477d4d9f1cd4b9d2e8443fe011e5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5487672
+      objectReference: {fileID: 0}
+    - target: {fileID: 6462513416971932536, guid: e90a477d4d9f1cd4b9d2e8443fe011e5, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.07386222
+      objectReference: {fileID: 0}
+    - target: {fileID: 6462513416971932536, guid: e90a477d4d9f1cd4b9d2e8443fe011e5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.24884853
+      objectReference: {fileID: 0}
+    - target: {fileID: 6462513416971932536, guid: e90a477d4d9f1cd4b9d2e8443fe011e5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 6462513416971932536, guid: e90a477d4d9f1cd4b9d2e8443fe011e5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.22851048
+      objectReference: {fileID: 0}
+    - target: {fileID: 6462513416971932536, guid: e90a477d4d9f1cd4b9d2e8443fe011e5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6462513416971932536, guid: e90a477d4d9f1cd4b9d2e8443fe011e5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6462513416971932536, guid: e90a477d4d9f1cd4b9d2e8443fe011e5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6462513416971932536, guid: e90a477d4d9f1cd4b9d2e8443fe011e5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6462513416971932536, guid: e90a477d4d9f1cd4b9d2e8443fe011e5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6462513416971932536, guid: e90a477d4d9f1cd4b9d2e8443fe011e5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6462513416971932536, guid: e90a477d4d9f1cd4b9d2e8443fe011e5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e90a477d4d9f1cd4b9d2e8443fe011e5, type: 3}
 --- !u!1 &1017732772
 GameObject:
   m_ObjectHideFlags: 0
@@ -2341,7 +2415,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 2306203174125617983, guid: 92165203b9858094faf273a7d0984b70, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 94618832}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92165203b9858094faf273a7d0984b70, type: 3}
 --- !u!114 &1483927627737953419
