@@ -13,15 +13,17 @@ public class PlayerMovement : MonoBehaviour
     Vector3 camForward;
     Vector3 camRight;
     [SerializeField] float jumpForce = 3;
-    public bool onGround = false;
+    bool onGround = false;
     [SerializeField] float maxVelocity = 15f;
     [SerializeField] float deccelerationSpeed = 3f;
+    Globals globals;
 
     private void OnEnable()
     {
         playerControls.Enable();
         rb = GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked;
+        globals = GameObject.FindGameObjectWithTag("Globals").GetComponent<Globals>();
     }
 
     private void OnDisable()
@@ -90,6 +92,14 @@ public class PlayerMovement : MonoBehaviour
         if (onGround == true)
         {
             rb.linearVelocity += (new Vector3(0, jumpForce, 0));
+        }
+    }
+
+    public void OnZip()
+    {
+        if (globals.seeHook)
+        {
+
         }
     }
 }

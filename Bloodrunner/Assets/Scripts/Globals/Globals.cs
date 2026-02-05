@@ -8,6 +8,10 @@ public class Globals : MonoBehaviour
     [SerializeField] GameObject playerPrefab;
     [SerializeField] public GameObject currentPlayer;
     [SerializeField] GameObject playerLavaLight;
+    public bool seeHook { get; set; } = false;
+    public bool isPaused { get; set; } = false;
+
+    public GameObject hookSeen { get; set; }
 
     public void Start()
     {
@@ -19,4 +23,16 @@ public class Globals : MonoBehaviour
         currentPlayer.GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
         currentPlayer.transform.position = respawnPoint;
     }
+
+    public void PauseGame()
+    {
+        Time.timeScale = 0f;
+        isPaused = true;
+    }
+    public void UnpauseGame()
+    {
+        Time.timeScale = 1f;
+        isPaused = false;
+    }
+
 }
