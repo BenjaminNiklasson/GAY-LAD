@@ -6177,7 +6177,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08eba03ee08bd9e4ab7c86794706150c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  fadeBlackImage: {fileID: 1676496977}
+  fadeOutBlackImage: {fileID: 1676496977}
+  fadeInBlackImage: {fileID: 1695437490}
 --- !u!4 &1339540942
 Transform:
   m_ObjectHideFlags: 0
@@ -8175,7 +8176,7 @@ Animator:
   m_GameObject: {fileID: 1676496977}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 92164cc178fce7f48893047bce9a8996, type: 2}
+  m_Controller: {fileID: 9100000, guid: 056e598650cc0904bb67663de2a79ae1, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -8376,7 +8377,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1695437491
 RectTransform:
   m_ObjectHideFlags: 0
