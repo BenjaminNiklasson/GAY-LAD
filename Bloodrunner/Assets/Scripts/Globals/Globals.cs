@@ -8,6 +8,8 @@ public class Globals : MonoBehaviour
     [SerializeField] GameObject playerPrefab;
     [SerializeField] public GameObject currentPlayer;
     [SerializeField] GameObject playerLavaLight;
+    public bool seeHook { get; set; } = false;
+    public GameObject hookSeen { get; set; }
 
     public void Start()
     {
