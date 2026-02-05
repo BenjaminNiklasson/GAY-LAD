@@ -14,8 +14,8 @@ public class PlayerMovement : MonoBehaviour
     Vector3 camRight;
     [SerializeField] float jumpForce = 3;
     bool onGround = false;
-    [SerializeField] float maxVelocity = 15f;
     [SerializeField] float deccelerationSpeed = 3f;
+    [SerializeField] float zipPower = 3f;
     Globals globals;
 
     private void OnEnable()
@@ -36,7 +36,6 @@ public class PlayerMovement : MonoBehaviour
     {
         // Get input
         moveDirection = playerControls.ReadValue<Vector3>() * playerSpeed;
-        rb.maxLinearVelocity = maxVelocity;
     }
 
     private void FixedUpdate()
@@ -101,7 +100,8 @@ public class PlayerMovement : MonoBehaviour
         if (globals.seeHook)
         {
             //ZIPPING!!!
-            rb.AddForce(globals.hookSeen.transform.position - transform.position, ForceMode.Impulse);
+            Vector3 direction = (globals.hookSeen.transform.position - transform.position).normalized;
+            rb.AddForce(direction * zipPower, ForceMode.Impulse);
         }
     }
 

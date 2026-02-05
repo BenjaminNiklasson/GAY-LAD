@@ -225,8 +225,8 @@ MonoBehaviour:
   moveDirection: {x: 0, y: 0, z: 0}
   playerSpeed: 3
   jumpForce: 3
-  maxVelocity: 9
   deccelerationSpeed: 3
+  zipPower: 15
 --- !u!114 &4710942865681563192
 MonoBehaviour:
   m_ObjectHideFlags: 0
