@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     Vector3 camForward;
     Vector3 camRight;
     [SerializeField] float jumpForce = 3;
-    bool onGround = false;
+    public bool onGround = false;
     [SerializeField] float maxVelocity = 15f;
     [SerializeField] float deccelerationSpeed = 3f;
 
@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     {
         playerControls.Enable();
         rb = GetComponent<Rigidbody>();
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void OnDisable()

@@ -18,7 +18,7 @@ public class HookScript : MonoBehaviour
     {
         if (other.CompareTag("CrossHair"))
         {
-
+            Debug.Log("DIDDLING");
         }
     }
 }
