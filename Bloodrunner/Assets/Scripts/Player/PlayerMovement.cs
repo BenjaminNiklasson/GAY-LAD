@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     {
         playerControls.Enable();
         rb = GetComponent<Rigidbody>();
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void OnDisable()
