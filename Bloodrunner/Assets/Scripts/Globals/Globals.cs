@@ -1,9 +1,12 @@
 using Unity.Cinemachine;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Globals : MonoBehaviour
 {
+    public UIManager UIManager;
+
     public Vector3 respawnPoint { get; set; }
     [SerializeField] GameObject playerPrefab;
     [SerializeField] public GameObject currentPlayer;
@@ -26,11 +29,14 @@ public class Globals : MonoBehaviour
 
     public void PauseGame()
     {
+        UIManager.PauseGameUIOn();
         Time.timeScale = 0f;
         isPaused = true;
+        
     }
     public void UnpauseGame()
     {
+        UIManager.PauseGameUIOff();
         Time.timeScale = 1f;
         isPaused = false;
     }
