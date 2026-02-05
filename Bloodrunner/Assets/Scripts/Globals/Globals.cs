@@ -12,7 +12,7 @@ public class Globals : MonoBehaviour
     [SerializeField] public GameObject currentPlayer;
     [SerializeField] GameObject playerLavaLight;
     public bool seeHook { get; set; } = false;
-    public bool isPaused { get; set; } = false;
+    public static bool isPaused { get; set; } = false;
 
     public GameObject hookSeen { get; set; }
 
@@ -31,7 +31,7 @@ public class Globals : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.None;
         UIManager.PauseGameUIOn();
-        Time.timeScale = 0f;
+        //Time.timeScale = 0f;
         isPaused = true;
         
     }
@@ -39,7 +39,7 @@ public class Globals : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         UIManager.PauseGameUIOff();
-        Time.timeScale = 1f;
+        //Time.timeScale = 1f;
         isPaused = false;
     }
 
