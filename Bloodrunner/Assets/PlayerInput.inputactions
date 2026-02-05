@@ -52,7 +52,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "OnPause",
+                    "name": "Pause",
                     "type": "Button",
                     "id": "10912cdf-919e-42d0-92a2-51b08de69fa1",
                     "expectedControlType": "",
@@ -311,7 +311,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "OnPause",
+                    "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
