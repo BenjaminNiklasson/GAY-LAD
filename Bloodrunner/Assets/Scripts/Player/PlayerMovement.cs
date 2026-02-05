@@ -105,8 +105,8 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    //public void OnPause()
-    //{
-    //    globals.PauseGame();
-    //}
+    public void OnPause()
+    {
+        globals.PauseGame();
+    }
 }
