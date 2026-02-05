@@ -5,11 +5,16 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
 
+    public Globals globals;
+
     public GameObject fadeOutBlackImage;
 
     public GameObject fadeInBlackImage;
 
     public float fadeOutTime = 4f;
+
+    public GameObject pauseSign;
+    public GameObject pauseBG;
 
     public void FadeToBlack()
     {
@@ -37,4 +42,13 @@ public class UIManager : MonoBehaviour
     {
         
     }
+
+    public void PauseGameUI()
+    {
+        pauseSign.SetActive(true);
+        pauseBG.SetActive(true);
+    }
+
+
+
 }
