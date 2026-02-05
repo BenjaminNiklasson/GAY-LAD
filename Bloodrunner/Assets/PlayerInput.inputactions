@@ -299,7 +299,7 @@
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";XR",
+                    "groups": ";XR;Keyboard&Mouse",
                     "action": "Zip",
                     "isComposite": false,
                     "isPartOfComposite": false

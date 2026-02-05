@@ -97,10 +97,16 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnZip()
     {
+        Debug.Log("Click");
         if (globals.seeHook)
         {
             //ZIPPING!!!
-            rb.AddForce();
+            rb.AddForce(globals.hookSeen.transform.position - transform.position, ForceMode.Impulse);
         }
     }
+
+    //public void OnPause()
+    //{
+    //    globals.PauseGame();
+    //}
 }
