@@ -29,6 +29,7 @@ public class Globals : MonoBehaviour
 
     public void PauseGame()
     {
+        Cursor.lockState = CursorLockMode.None;
         UIManager.PauseGameUIOn();
         Time.timeScale = 0f;
         isPaused = true;
@@ -36,9 +37,15 @@ public class Globals : MonoBehaviour
     }
     public void UnpauseGame()
     {
+        Cursor.lockState = CursorLockMode.Locked;
         UIManager.PauseGameUIOff();
         Time.timeScale = 1f;
         isPaused = false;
+    }
+
+    public void Update()
+    {
+       
     }
 
 }

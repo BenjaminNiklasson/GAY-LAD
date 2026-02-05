@@ -15,6 +15,8 @@ public class UIManager : MonoBehaviour
 
     public GameObject pauseSign;
 
+    public Animator animator;
+
     public void FadeToBlack()
     {
         fadeOutBlackImage.SetActive(true);
@@ -45,6 +47,7 @@ public class UIManager : MonoBehaviour
     public void PauseGameUIOn()
     {
         pauseSign.SetActive(true);
+        
     }
     public void PauseGameUIOff()
     {
