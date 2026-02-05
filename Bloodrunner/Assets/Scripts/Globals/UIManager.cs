@@ -14,7 +14,6 @@ public class UIManager : MonoBehaviour
     public float fadeOutTime = 4f;
 
     public GameObject pauseSign;
-    public GameObject pauseBG;
 
     public void FadeToBlack()
     {
@@ -43,10 +42,13 @@ public class UIManager : MonoBehaviour
         
     }
 
-    public void PauseGameUI()
+    public void PauseGameUIOn()
     {
         pauseSign.SetActive(true);
-        pauseBG.SetActive(true);
+    }
+    public void PauseGameUIOff()
+    {
+        pauseSign.SetActive(false);
     }
 
 
