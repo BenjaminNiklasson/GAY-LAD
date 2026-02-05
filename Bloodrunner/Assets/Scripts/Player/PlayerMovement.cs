@@ -99,7 +99,8 @@ public class PlayerMovement : MonoBehaviour
     {
         if (globals.seeHook)
         {
-
+            //ZIPPING!!!
+            rb.AddForce();
         }
     }
 }
