@@ -1,3 +1,4 @@
+using System.Collections;
 using Unity.Cinemachine;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -6,50 +7,53 @@ using UnityEngine.SceneManagement;
 public class Globals : MonoBehaviour
 {
     public UIManager UIManager;
+    private GameObject globals;
+    public float startLevelDelay = 2f;
 
-    public string currentScene;
-
-    
     [SerializeField] GameObject playerPrefab;
     [SerializeField] public GameObject currentPlayer;
-    [SerializeField] GameObject playerLavaLight;
+    
     public bool seeHook { get; set; } = false;
     public static bool isPaused { get; set; } = false;
-
     public GameObject hookSeen { get; set; }
+    public Vector3 respawnPoint { get; set; }
+    public int deaths { get; set; } = 0;
 
-    private GameObject scenePersist { get; set; }
-    public Vector3 respawnPoint { get { return scenePersist.GetComponent<ScenePersist>().respawnPoint; } set { scenePersist.GetComponent<ScenePersist>().respawnPoint = value;  } }
+    private void Awake()
+    {
+        if (globals == null)
+        {
+            globals = gameObject;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     public void Start()
     {
-        Physics.IgnoreLayerCollision(3, 0);
-
-        currentScene = SceneManager.GetActiveScene().name;
-
-        if (currentScene == "Main Menu")
+        if(deaths == 0)
         {
-            UIManager.FadeInUI();
+            respawnPoint = currentPlayer.transform.position;
         }
 
-        scenePersist = GameObject.FindGameObjectWithTag("ScenePersist");
-    }
+        currentPlayer.transform.position = respawnPoint;
 
-    
+        Physics.IgnoreLayerCollision(3, 0);
+    }
 
     public void PlayerDeathGlobal()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        deaths++;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
-
-
 
     public void PauseGame()
     {
         if (!isPaused)
         {
-
-
             Cursor.lockState = CursorLockMode.None;
             UIManager.PauseGameUIOn();
             isPaused = true;
@@ -64,7 +68,6 @@ public class Globals : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             UIManager.PauseGameUIOff();
             Time.timeScale = 1f;
-            
         }
     }
 
@@ -80,9 +83,21 @@ public class Globals : MonoBehaviour
         }
     }
 
-    public void Update()
+    public void StartLevel(string sceneName)
     {
-       
+        StartCoroutine(StartLevelRoutine(sceneName));
+    }
+
+    //Starts the StartLevelRoutine.
+    IEnumerator StartLevelRoutine(string sceneName)
+    {
+        //Calls the ui Manager to trigger the fade to black effect.
+        UIManager.FadeToBlack();
+
+        //Waits the amount of time designated at the startLevelDelay float variable.
+        yield return new WaitForSeconds(startLevelDelay);
+        deaths = 0;
+        SceneManager.LoadScene(sceneName);
     }
 
 }
