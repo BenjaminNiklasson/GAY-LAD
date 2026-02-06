@@ -590,6 +590,7 @@ MonoBehaviour:
   pauseBgAnimator: {fileID: 2145824006}
   pauseSignSlideOut: PauseSignLeave
   pauseBgSlideOut: PauseBG Leave
+  pauseBgSlideIn: PauseBG Animation
   globals: {fileID: 657358971}
   fadeOutBlackImage: {fileID: 469673816}
   fadeInBlackImage: {fileID: 469673816}
@@ -2950,7 +2951,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 24b1420586ce1414896e65388cf78d62, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
