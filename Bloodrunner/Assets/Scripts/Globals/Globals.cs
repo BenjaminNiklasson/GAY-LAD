@@ -44,18 +44,38 @@ public class Globals : MonoBehaviour
 
     public void PauseGame()
     {
-        Cursor.lockState = CursorLockMode.None;
-        UIManager.PauseGameUIOn();
-        isPaused = true;
-        Time.timeScale = 0f;
+        if (!isPaused)
+        {
+
+
+            Cursor.lockState = CursorLockMode.None;
+            UIManager.PauseGameUIOn();
+            isPaused = true;
+            Time.timeScale = 0f;
+        }
 
     }
     public void UnpauseGame()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        UIManager.PauseGameUIOff();
-        Time.timeScale = 1f;
-        isPaused = false;
+        if (isPaused)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            UIManager.PauseGameUIOff();
+            Time.timeScale = 1f;
+            
+        }
+    }
+
+    public void PauseOrUnpauseGame()
+    {
+        if (isPaused)
+        {
+            isPaused = false;
+        }
+        else
+        {
+            isPaused = true;
+        }
     }
 
     public void Update()
