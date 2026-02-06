@@ -7,6 +7,8 @@ public class Globals : MonoBehaviour
 {
     public UIManager UIManager;
 
+    public string currentScene;
+
     public Vector3 respawnPoint { get; set; }
     [SerializeField] GameObject playerPrefab;
     [SerializeField] public GameObject currentPlayer;
@@ -19,7 +21,18 @@ public class Globals : MonoBehaviour
     public void Start()
     {
         Physics.IgnoreLayerCollision(3, 0);
+
+        currentScene = SceneManager.GetActiveScene().name;
+
+        if (currentScene == "Main Menu")
+        {
+            UIManager.FadeInUI();
+        }
+       
+        
     }
+
+    
 
     public void PlayerDeathGlobal()
     {
@@ -27,20 +40,42 @@ public class Globals : MonoBehaviour
         currentPlayer.transform.position = respawnPoint;
     }
 
+
+
     public void PauseGame()
     {
-        Cursor.lockState = CursorLockMode.None;
-        UIManager.PauseGameUIOn();
-        Time.timeScale = 0f;
-        isPaused = true;
-        
+        if (!isPaused)
+        {
+
+
+            Cursor.lockState = CursorLockMode.None;
+            UIManager.PauseGameUIOn();
+            isPaused = true;
+            Time.timeScale = 0f;
+        }
+
     }
     public void UnpauseGame()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        UIManager.PauseGameUIOff();
-        Time.timeScale = 1f;
-        isPaused = false;
+        if (isPaused)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            UIManager.PauseGameUIOff();
+            Time.timeScale = 1f;
+            
+        }
+    }
+
+    public void PauseOrUnpauseGame()
+    {
+        if (isPaused)
+        {
+            isPaused = false;
+        }
+        else
+        {
+            isPaused = true;
+        }
     }
 
     public void Update()
