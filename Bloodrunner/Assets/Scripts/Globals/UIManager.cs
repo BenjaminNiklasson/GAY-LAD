@@ -7,12 +7,14 @@ using NUnit.Framework.Internal.Filters;
 public class UIManager : MonoBehaviour
 {
 
-   public Animator pauseSignLeave;
+   public Animator pauseSignLeaveAninmator;
     public Animator pauseBgAnimator;
+    public Animator settingsSignAnimator;
     
     [SerializeField] private string pauseSignSlideOut;
     [SerializeField] private string pauseBgSlideOut;
     [SerializeField] private string pauseBgSlideIn;
+    [SerializeField] private string settingsSignSlideOut;
     public Globals globals;
 
     public GameObject fadeOutBlackImage;
@@ -23,6 +25,7 @@ public class UIManager : MonoBehaviour
 
     public GameObject pauseSign;
     public GameObject pauseBG;
+    public GameObject settingsSign;
 
     
 
@@ -69,7 +72,7 @@ public class UIManager : MonoBehaviour
     }
     public void PauseGameUIOff()
     {
-        pauseSignLeave.Play(pauseSignSlideOut, 0, 0.0f);
+        pauseSignLeaveAninmator.Play(pauseSignSlideOut, 0, 0.0f);
         pauseBgAnimator.Play(pauseBgSlideOut, 0, 0.0f);
 
         StartCoroutine(PauseSignUIOff());
@@ -84,6 +87,10 @@ public class UIManager : MonoBehaviour
         globals.PauseOrUnpauseGame();
     }
 
+    public void SettingsSignActivate()
+    {
+
+    }
    
 
 }

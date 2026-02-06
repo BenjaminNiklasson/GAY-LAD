@@ -6,6 +6,7 @@ using UnityEngine.Rendering;
 
 public class PlayerMovement : MonoBehaviour
 {
+    
     public InputAction playerControls;
     public Vector3 moveDirection;
     Rigidbody rb;
@@ -85,7 +86,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnZip()
     {
-        Debug.Log("Click");
+        
         if (globals.seeHook)
         {
             //ZIPPING!!!
@@ -96,6 +97,10 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnPause()
     {
+       
         globals.PauseGame();
     }
+
+   
+
 }
