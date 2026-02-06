@@ -10,11 +10,14 @@ public class UIManager : MonoBehaviour
     public Animator pauseSignLeaveAninmator;
     public Animator pauseBgAnimator;
     public Animator settingsSignAnimator;
+    public Animator controlSignAnimator;
 
     [SerializeField] private string pauseSignSlideOut;
     [SerializeField] private string pauseBgSlideOut;
     [SerializeField] private string pauseBgSlideIn;
     [SerializeField] private string settingsSignSlideOut;
+    [SerializeField] private string controlSignSlideOut;
+    [SerializeField] private string controlSignSlideIn;
     public Globals globals;
 
     public GameObject fadeOutBlackImage;
@@ -26,6 +29,7 @@ public class UIManager : MonoBehaviour
     public GameObject pauseSign;
     public GameObject pauseBG;
     public GameObject settingsSign;
+    public GameObject controlsSign;
 
 
 
@@ -105,4 +109,21 @@ public class UIManager : MonoBehaviour
         settingsSign.SetActive(false);
 
     }
+    public void ControlSignActivate()
+    {
+        controlsSign.SetActive(true);
+    }
+
+    public void ControlSignDeActivate()
+    {
+        controlSignAnimator.Play(controlSignSlideOut);
+        StartCoroutine(ControlSignDeActivateDelay());
+    }
+
+    IEnumerator ControlSignDeActivateDelay()
+    {
+        yield return new WaitForSeconds(1f);
+        controlsSign.SetActive(false);
+    }
+
 }
