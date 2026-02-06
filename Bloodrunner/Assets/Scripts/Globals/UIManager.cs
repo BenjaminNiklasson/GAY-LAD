@@ -7,10 +7,10 @@ using NUnit.Framework.Internal.Filters;
 public class UIManager : MonoBehaviour
 {
 
-   public Animator pauseSignLeaveAninmator;
+    public Animator pauseSignLeaveAninmator;
     public Animator pauseBgAnimator;
     public Animator settingsSignAnimator;
-    
+
     [SerializeField] private string pauseSignSlideOut;
     [SerializeField] private string pauseBgSlideOut;
     [SerializeField] private string pauseBgSlideIn;
@@ -27,7 +27,7 @@ public class UIManager : MonoBehaviour
     public GameObject pauseBG;
     public GameObject settingsSign;
 
-    
+
 
     public void FadeToBlack()
     {
@@ -38,8 +38,8 @@ public class UIManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
-        
+
+
 
     }
 
@@ -58,7 +58,7 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void PauseGameUIOn()
@@ -67,7 +67,7 @@ public class UIManager : MonoBehaviour
         pauseBG.SetActive(true);
         pauseBgAnimator.Play(pauseBgSlideIn, 0, 0.0f);
         globals.PauseOrUnpauseGame();
-        
+
 
     }
     public void PauseGameUIOff()
@@ -76,7 +76,7 @@ public class UIManager : MonoBehaviour
         pauseBgAnimator.Play(pauseBgSlideOut, 0, 0.0f);
 
         StartCoroutine(PauseSignUIOff());
-        
+
     }
 
     IEnumerator PauseSignUIOff()
@@ -89,8 +89,20 @@ public class UIManager : MonoBehaviour
 
     public void SettingsSignActivate()
     {
+        settingsSign.SetActive(true);
+    }
+
+    public void SettingsSignDeActivate()
+    {
+        settingsSignAnimator.Play(settingsSignSlideOut, 0, 0.0f);
+        StartCoroutine(SettingsSignExit());
+    }
+
+    IEnumerator SettingsSignExit()
+    {
+        yield return new WaitForSeconds(1f);
+
+        settingsSign.SetActive(false);
 
     }
-   
-
 }
