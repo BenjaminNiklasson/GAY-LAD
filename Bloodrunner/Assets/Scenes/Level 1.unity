@@ -200,6 +200,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volume Profile (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 303997866297779037, guid: c5636970774229e4aa9264de7e0889de, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 837587401573225279, guid: c5636970774229e4aa9264de7e0889de, type: 3}
       propertyPath: m_LocalPosition.x
       value: 19.97138
@@ -1216,6 +1220,7 @@ MonoBehaviour:
   m_Script: {fileID: 1642155417}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Entries: []
 --- !u!4 &1045504575
 Transform:
   m_ObjectHideFlags: 19
