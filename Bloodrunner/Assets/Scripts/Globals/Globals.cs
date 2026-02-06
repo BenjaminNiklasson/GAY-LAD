@@ -36,8 +36,7 @@ public class Globals : MonoBehaviour
 
     public void PlayerDeathGlobal()
     {
-        currentPlayer.GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
-        currentPlayer.transform.position = respawnPoint;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
 
