@@ -11,6 +11,7 @@ TagManager:
   - CineMachineCamera
   - PlayerLavaLight
   - CrossHair
+  - ScenePersist
   layers:
   - Default
   - TransparentFX

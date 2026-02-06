@@ -9,7 +9,7 @@ public class Globals : MonoBehaviour
 
     public string currentScene;
 
-    public Vector3 respawnPoint { get; set; }
+    
     [SerializeField] GameObject playerPrefab;
     [SerializeField] public GameObject currentPlayer;
     [SerializeField] GameObject playerLavaLight;
@@ -17,6 +17,9 @@ public class Globals : MonoBehaviour
     public static bool isPaused { get; set; } = false;
 
     public GameObject hookSeen { get; set; }
+
+    private GameObject scenePersist { get; set; }
+    public Vector3 respawnPoint { get { return scenePersist.GetComponent<ScenePersist>().respawnPoint; } set { scenePersist.GetComponent<ScenePersist>().respawnPoint = value;  } }
 
     public void Start()
     {
@@ -28,8 +31,8 @@ public class Globals : MonoBehaviour
         {
             UIManager.FadeInUI();
         }
-       
-        
+
+        scenePersist = GameObject.FindGameObjectWithTag("ScenePersist");
     }
 
     

@@ -3,7 +3,7 @@ using UnityEngine;
 public class ScenePersist : MonoBehaviour
 {
     GameObject scenePersist;
-    public Transform respawnPoint { get; set; }
+    public Vector3 respawnPoint { get; set; }
 
     private void Awake()
     {
