@@ -49,23 +49,12 @@ public class PlayerMovement : MonoBehaviour
 
         moveDirection = (camRight * moveDirection.x + camForward * moveDirection.z) * playerSpeed;
 
-        if (moveDirection == Vector3.zero)
+        if (moveDirection != Vector3.zero)
         {
-            if (moveDirection.x == 0 && moveDirection.z == 0 && rb.linearVelocity.x == 0 && rb.linearVelocity.z == 0)
-            {
-                rb.linearVelocity += new Vector3(rb.linearVelocity.x/deccelerationSpeed, 0, rb.linearVelocity.z/2);
-            }
-            else if (moveDirection.x == 0 && rb.linearVelocity.x == 0)
-            {
-                rb.linearVelocity += new Vector3(rb.linearVelocity.x / deccelerationSpeed, 0, 0);
-            }
-            else if (moveDirection.z == 0 && rb.linearVelocity.z == 0)
-            {
-                rb.linearVelocity += new Vector3(0, 0, rb.linearVelocity.z / deccelerationSpeed);
-            }
+            rb.linearVelocity += moveDirection;
         }
+        //rb.AddForce(moveDirection);
 
-        rb.AddForce(moveDirection);
         
         
     }
@@ -101,7 +90,7 @@ public class PlayerMovement : MonoBehaviour
         {
             //ZIPPING!!!
             Vector3 direction = (globals.hookSeen.transform.position - transform.position).normalized;
-            rb.AddForce(direction * zipPower, ForceMode.Impulse);
+            rb.linearVelocity += direction * zipPower;
         }
     }
 

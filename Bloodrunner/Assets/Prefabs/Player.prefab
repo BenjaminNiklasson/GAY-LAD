@@ -127,7 +127,7 @@ Rigidbody:
   m_GameObject: {fileID: 4345790054281642361}
   serializedVersion: 5
   m_Mass: 2
-  m_LinearDamping: 0
+  m_LinearDamping: 0.5
   m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -223,10 +223,10 @@ MonoBehaviour:
       m_Flags: 8
     m_Flags: 0
   moveDirection: {x: 0, y: 0, z: 0}
-  playerSpeed: 4
+  playerSpeed: 0.5
   jumpForce: 6
-  deccelerationSpeed: 3
-  zipPower: 15
+  deccelerationSpeed: 1
+  zipPower: 30
 --- !u!114 &4710942865681563192
 MonoBehaviour:
   m_ObjectHideFlags: 0
