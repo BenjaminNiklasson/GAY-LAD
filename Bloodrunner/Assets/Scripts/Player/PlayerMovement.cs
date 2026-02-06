@@ -54,10 +54,6 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.linearVelocity += moveDirection;
         }
-        //rb.AddForce(moveDirection);
-
-        
-        
     }
 
     public void OnCollisionEnter(Collision collision)
@@ -97,7 +93,6 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnPause()
     {
-       
         globals.PauseGame();
     }
 

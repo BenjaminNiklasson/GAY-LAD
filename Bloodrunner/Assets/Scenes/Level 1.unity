@@ -188,6 +188,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db05dc74df3d674478e4cbbf0f34cb9a, type: 3}
+--- !u!1001 &28853770
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3598103089975158980, guid: 5c04027560adb9c46818cc22e759f0aa, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 28.379864
+      objectReference: {fileID: 0}
+    - target: {fileID: 3598103089975158980, guid: 5c04027560adb9c46818cc22e759f0aa, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -25.381521
+      objectReference: {fileID: 0}
+    - target: {fileID: 3598103089975158980, guid: 5c04027560adb9c46818cc22e759f0aa, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -45.425198
+      objectReference: {fileID: 0}
+    - target: {fileID: 3598103089975158980, guid: 5c04027560adb9c46818cc22e759f0aa, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3598103089975158980, guid: 5c04027560adb9c46818cc22e759f0aa, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3598103089975158980, guid: 5c04027560adb9c46818cc22e759f0aa, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3598103089975158980, guid: 5c04027560adb9c46818cc22e759f0aa, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3598103089975158980, guid: 5c04027560adb9c46818cc22e759f0aa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3598103089975158980, guid: 5c04027560adb9c46818cc22e759f0aa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3598103089975158980, guid: 5c04027560adb9c46818cc22e759f0aa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6191465694286037088, guid: 5c04027560adb9c46818cc22e759f0aa, type: 3}
+      propertyPath: m_Name
+      value: ScenePersist
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5c04027560adb9c46818cc22e759f0aa, type: 3}
 --- !u!1001 &61749968
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -199,6 +256,10 @@ PrefabInstance:
     - target: {fileID: 303997866297779037, guid: c5636970774229e4aa9264de7e0889de, type: 3}
       propertyPath: m_Name
       value: Volume Profile (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 303997866297779037, guid: c5636970774229e4aa9264de7e0889de, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 837587401573225279, guid: c5636970774229e4aa9264de7e0889de, type: 3}
       propertyPath: m_LocalPosition.x
@@ -664,6 +725,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Aech (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 890e67cca9d5edc48a166a238fd61a38, type: 3}
+      propertyPath: m_TagString
+      value: Floor
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1004,10 +1069,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Globals
   UIManager: {fileID: 0}
-  currentScene: 
+  startLevelDelay: 2
   playerPrefab: {fileID: 4345790054281642361, guid: 78153cd3f98893944a55af7fe5c8d750, type: 3}
   currentPlayer: {fileID: 1429762003}
-  playerLavaLight: {fileID: 0}
 --- !u!4 &735239594
 Transform:
   m_ObjectHideFlags: 0
@@ -1984,6 +2048,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Aech (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 890e67cca9d5edc48a166a238fd61a38, type: 3}
+      propertyPath: m_TagString
+      value: Floor
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2337,3 +2405,4 @@ SceneRoots:
   - {fileID: 2007135958}
   - {fileID: 4111081}
   - {fileID: 1499241481}
+  - {fileID: 28853770}
