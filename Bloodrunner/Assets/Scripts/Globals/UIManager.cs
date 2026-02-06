@@ -85,7 +85,7 @@ public class UIManager : MonoBehaviour
 
     IEnumerator PauseSignUIOff()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.2f);
         pauseSign.SetActive(false);
         pauseBG.SetActive(false);
         globals.PauseOrUnpauseGame();
@@ -93,6 +93,7 @@ public class UIManager : MonoBehaviour
 
     public void SettingsSignActivate()
     {
+        settingsSign.SetActive(false);
         settingsSign.SetActive(true);
     }
 
@@ -104,13 +105,15 @@ public class UIManager : MonoBehaviour
 
     IEnumerator SettingsSignExit()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.2f);
 
         settingsSign.SetActive(false);
 
     }
     public void ControlSignActivate()
     {
+        
+        controlsSign.SetActive(false);
         controlsSign.SetActive(true);
     }
 
@@ -122,7 +125,7 @@ public class UIManager : MonoBehaviour
 
     IEnumerator ControlSignDeActivateDelay()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.2f);
         controlsSign.SetActive(false);
     }
 

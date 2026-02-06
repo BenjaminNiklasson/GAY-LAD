@@ -96,6 +96,9 @@ public class PlayerMovement : MonoBehaviour
         globals.PauseGame();
     }
 
-   
+   public void BackToMainMenu()
+    {
+        globals.BackToMainMenu();
+    }
 
 }

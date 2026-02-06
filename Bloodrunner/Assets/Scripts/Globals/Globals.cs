@@ -100,4 +100,9 @@ public class Globals : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 
+    public void BackToMainMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+
 }
