@@ -12,6 +12,7 @@ TagManager:
   - PlayerLavaLight
   - CrossHair
   - ScenePersist
+  - Gun
   layers:
   - Default
   - TransparentFX
