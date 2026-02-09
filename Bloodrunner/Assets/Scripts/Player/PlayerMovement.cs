@@ -29,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float jointSpring = 4.5f;
     [SerializeField] float jointDamper = 7f;
     [SerializeField] float jointMassScale = 4.5f;
+    float swingPush = 3;
     [SerializeField] float swingSpeed = 3;
     LineRenderer lr;
 
@@ -77,15 +78,12 @@ public class PlayerMovement : MonoBehaviour
         camRight.y = 0;
         camForward.Normalize();
         camRight.Normalize();
-
         moveDirection = (camRight * moveDirection.x + camForward * moveDirection.z) * playerSpeed;
 
         if (moveDirection != Vector3.zero)
         {
             rb.linearVelocity += moveDirection;
         }
-
-        
     }
 
     public void OnCollisionEnter(Collision collision)
@@ -126,6 +124,7 @@ public class PlayerMovement : MonoBehaviour
     {
         hook = globals.hookSeen;
         swinging = true;
+        playerSpeed = playerSpeed* swingSpeed;
         joint = gameObject.AddComponent<SpringJoint>();
         joint.autoConfigureConnectedAnchor = false;
         joint.connectedAnchor = globals.hookSeen.transform.position;
@@ -139,14 +138,14 @@ public class PlayerMovement : MonoBehaviour
         joint.damper = jointDamper;
         joint.massScale = jointMassScale;
 
-        rb.linearVelocity = rb.linearVelocity * swingSpeed;
+        rb.linearVelocity = rb.linearVelocity * swingPush;
 
         lr.positionCount = 2;
         DrawRope(gun.transform.GetChild(0).GetChild(0).position, hook.transform.position);
     }
     private void StopSwing()
     {
-        Debug.Log("kill!!!");
+        playerSpeed = playerSpeed / swingSpeed;
         Destroy(GetComponent<SpringJoint>());
         lr.positionCount = 0;
         gun.transform.rotation = new Quaternion(0, 0, 0, 0);
