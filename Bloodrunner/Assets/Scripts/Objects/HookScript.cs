@@ -3,9 +3,11 @@ using UnityEngine;
 public class HookScript : MonoBehaviour
 {
     Globals globals;
+    MeshRenderer renderer;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        renderer = GetComponent<MeshRenderer>();
         globals = GameObject.FindGameObjectWithTag("Globals").GetComponent<Globals>();
     }
 

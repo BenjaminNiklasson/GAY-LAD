@@ -1,4 +1,5 @@
 using System;
+using System.Net.NetworkInformation;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -20,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float zipPower = 3f;
     Globals globals;
     bool swinging = false;
+    KeyCode swingKey = KeyCode.Mouse1;
 
     GameObject gun;
     SpringJoint joint;
@@ -27,12 +29,14 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float jointSpring = 4.5f;
     [SerializeField] float jointDamper = 7f;
     [SerializeField] float jointMassScale = 4.5f;
+    [SerializeField] float swingSpeed = 3;
     LineRenderer lr;
 
     private void OnEnable()
     {
         playerInput = GetComponent<PlayerInput>();
         playerControls.Enable();
+        lr = GetComponent<LineRenderer>();
         rb = GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked;
         globals = GameObject.FindGameObjectWithTag("Globals").GetComponent<Globals>();
@@ -49,6 +53,20 @@ public class PlayerMovement : MonoBehaviour
     {
         // Get input
         moveDirection = playerControls.ReadValue<Vector3>() * playerSpeed;
+        
+        if(Input.GetKeyDown(swingKey) && globals.seeHook && swinging == false)
+        {
+            Swinging();
+        }
+        else if(Input.GetKeyUp(swingKey))
+        {
+            StopSwing();
+        }
+        else if (swinging)
+        {
+            gun.transform.LookAt(hook.transform);
+        }
+        
     }
 
     private void FixedUpdate()
@@ -67,19 +85,7 @@ public class PlayerMovement : MonoBehaviour
             rb.linearVelocity += moveDirection;
         }
 
-        var swing = playerInput.actions["Swing"];
-        if(swing.WasPressedThisFrame() && swing.IsPressed() && globals.seeHook && swinging == false)
-        {
-            Swinging();
-        }
-        else if (swing.WasReleasedThisFrame())
-        {
-            StopSwing();
-        }
-        else if (swinging)
-        {
-            gun.transform.LookAt(hook.transform);
-        }
+        
     }
 
     public void OnCollisionEnter(Collision collision)
@@ -126,22 +132,25 @@ public class PlayerMovement : MonoBehaviour
 
         float distanceFromPoint = Vector3.Distance(transform.position, hook.transform.position);
 
-        joint.maxDistance = distanceFromPoint * 0.8f;
-        joint.minDistance = distanceFromPoint * 0.25f;
+        joint.maxDistance = distanceFromPoint * 0.1f;
+        joint.minDistance = distanceFromPoint * 0.8f;
 
         joint.spring = jointSpring;
         joint.damper = jointDamper;
         joint.massScale = jointMassScale;
 
+        rb.linearVelocity = rb.linearVelocity * swingSpeed;
+
         lr.positionCount = 2;
-        DrawRope(gun.transform.GetChild(0).position, hook.transform.position);
+        DrawRope(gun.transform.GetChild(0).GetChild(0).position, hook.transform.position);
     }
     private void StopSwing()
     {
+        Debug.Log("kill!!!");
+        Destroy(GetComponent<SpringJoint>());
         lr.positionCount = 0;
         gun.transform.rotation = new Quaternion(0, 0, 0, 0);
         swinging = false;
-        Destroy(joint);
     }
     private void DrawRope(Vector3 start, Vector3 stop)
     {

@@ -494,9 +494,29 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1131600867771875096, guid: 78153cd3f98893944a55af7fe5c8d750, type: 3}
+      propertyPath: m_UseWorldSpace
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1131600867771875096, guid: 78153cd3f98893944a55af7fe5c8d750, type: 3}
+      propertyPath: m_MaskInteraction
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1131600867771875096, guid: 78153cd3f98893944a55af7fe5c8d750, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: eed02f193ce5278479bb8237f2d47cac, type: 2}
+    - target: {fileID: 1131600867771875096, guid: 78153cd3f98893944a55af7fe5c8d750, type: 3}
+      propertyPath: m_Parameters.generateLightingData
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1131600867771875096, guid: 78153cd3f98893944a55af7fe5c8d750, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].time
+      value: 0.0015258789
+      objectReference: {fileID: 0}
+    - target: {fileID: 1131600867771875096, guid: 78153cd3f98893944a55af7fe5c8d750, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
+      value: 0.09740257
+      objectReference: {fileID: 0}
     - target: {fileID: 2897403555380938608, guid: 78153cd3f98893944a55af7fe5c8d750, type: 3}
       propertyPath: m_Camera
       value: 
@@ -544,6 +564,10 @@ PrefabInstance:
     - target: {fileID: 6095867348200213911, guid: 78153cd3f98893944a55af7fe5c8d750, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7515184840274142651, guid: 78153cd3f98893944a55af7fe5c8d750, type: 3}
+      propertyPath: swingSpeed
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7515184840274142651, guid: 78153cd3f98893944a55af7fe5c8d750, type: 3}
       propertyPath: jointSpring
@@ -1381,18 +1405,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: CameraEmpty
       objectReference: {fileID: 0}
-    - target: {fileID: 3078902085173468671, guid: 7350d7d1b3910f448a143b7079d05f68, type: 3}
-      propertyPath: m_TagString
-      value: Gun
-      objectReference: {fileID: 0}
-    - target: {fileID: 6225414677341088222, guid: 7350d7d1b3910f448a143b7079d05f68, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.35358188
-      objectReference: {fileID: 0}
-    - target: {fileID: 6225414677341088222, guid: 7350d7d1b3910f448a143b7079d05f68, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.581
-      objectReference: {fileID: 0}
     - target: {fileID: 6600619148984477746, guid: 7350d7d1b3910f448a143b7079d05f68, type: 3}
       propertyPath: m_LocalPosition.x
       value: 27.30489
@@ -1432,6 +1444,14 @@ PrefabInstance:
     - target: {fileID: 6600619148984477746, guid: 7350d7d1b3910f448a143b7079d05f68, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9106063982423669840, guid: 7350d7d1b3910f448a143b7079d05f68, type: 3}
+      propertyPath: m_Size.z
+      value: 72.39807
+      objectReference: {fileID: 0}
+    - target: {fileID: 9106063982423669840, guid: 7350d7d1b3910f448a143b7079d05f68, type: 3}
+      propertyPath: m_Center.z
+      value: 36.199036
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2138,18 +2158,6 @@ PrefabInstance:
     - target: {fileID: 622488411544928974, guid: db05dc74df3d674478e4cbbf0f34cb9a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 77.189
-      objectReference: {fileID: 0}
-    - target: {fileID: 7424054907034126818, guid: db05dc74df3d674478e4cbbf0f34cb9a, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 5.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 7424054907034126818, guid: db05dc74df3d674478e4cbbf0f34cb9a, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 5.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 7424054907034126818, guid: db05dc74df3d674478e4cbbf0f34cb9a, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 5.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
