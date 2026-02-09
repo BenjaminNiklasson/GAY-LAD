@@ -19,6 +19,7 @@ public class Globals : MonoBehaviour
     public Vector3 respawnPoint { get; set; }
     public int deaths { get; set; } = 0;
 
+    //Game stuff
     private void Awake()
     {
         if (globals == null)
@@ -31,7 +32,6 @@ public class Globals : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
     public void Start()
     {
         if(deaths == 0)
@@ -43,13 +43,13 @@ public class Globals : MonoBehaviour
 
         Physics.IgnoreLayerCollision(3, 0);
     }
-
     public void PlayerDeathGlobal()
     {
         deaths++;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
+    //UI stuff
     public void PauseGame()
     {
         if (!isPaused)
@@ -70,7 +70,6 @@ public class Globals : MonoBehaviour
             Time.timeScale = 1f;
         }
     }
-
     public void PauseOrUnpauseGame()
     {
         if (isPaused)
@@ -82,12 +81,10 @@ public class Globals : MonoBehaviour
             isPaused = true;
         }
     }
-
     public void StartLevel(string sceneName)
     {
         StartCoroutine(StartLevelRoutine(sceneName));
     }
-
     //Starts the StartLevelRoutine.
     IEnumerator StartLevelRoutine(string sceneName)
     {
@@ -99,10 +96,8 @@ public class Globals : MonoBehaviour
         deaths = 0;
         SceneManager.LoadScene(sceneName);
     }
-
     public void BackToMainMenu()
     {
         SceneManager.LoadScene(0);
     }
-
 }

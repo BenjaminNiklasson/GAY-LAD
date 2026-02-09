@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
 {
     
     public InputAction playerControls;
+    PlayerInput playerInput;
     public Vector3 moveDirection;
     Rigidbody rb;
     [SerializeField] float playerSpeed = 3f;
@@ -18,13 +19,24 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float deccelerationSpeed = 3f;
     [SerializeField] float zipPower = 3f;
     Globals globals;
+    bool swinging = false;
+
+    GameObject gun;
+    SpringJoint joint;
+    GameObject hook;
+    [SerializeField] float jointSpring = 4.5f;
+    [SerializeField] float jointDamper = 7f;
+    [SerializeField] float jointMassScale = 4.5f;
+    LineRenderer lr;
 
     private void OnEnable()
     {
+        playerInput = GetComponent<PlayerInput>();
         playerControls.Enable();
         rb = GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked;
         globals = GameObject.FindGameObjectWithTag("Globals").GetComponent<Globals>();
+        gun = GameObject.FindGameObjectWithTag("Gun");
     }
 
     private void OnDisable()
@@ -53,6 +65,20 @@ public class PlayerMovement : MonoBehaviour
         if (moveDirection != Vector3.zero)
         {
             rb.linearVelocity += moveDirection;
+        }
+
+        var swing = playerInput.actions["Swing"];
+        if(swing.WasPressedThisFrame() && swing.IsPressed() && globals.seeHook && swinging == false)
+        {
+            Swinging();
+        }
+        else if (swing.WasReleasedThisFrame())
+        {
+            StopSwing();
+        }
+        else if (swinging)
+        {
+            gun.transform.LookAt(hook.transform);
         }
     }
 
@@ -90,15 +116,47 @@ public class PlayerMovement : MonoBehaviour
             rb.linearVelocity += direction * zipPower;
         }
     }
+    private void Swinging()
+    {
+        hook = globals.hookSeen;
+        swinging = true;
+        joint = gameObject.AddComponent<SpringJoint>();
+        joint.autoConfigureConnectedAnchor = false;
+        joint.connectedAnchor = globals.hookSeen.transform.position;
 
+        float distanceFromPoint = Vector3.Distance(transform.position, hook.transform.position);
+
+        joint.maxDistance = distanceFromPoint * 0.8f;
+        joint.minDistance = distanceFromPoint * 0.25f;
+
+        joint.spring = jointSpring;
+        joint.damper = jointDamper;
+        joint.massScale = jointMassScale;
+
+        lr.positionCount = 2;
+        DrawRope(gun.transform.GetChild(0).position, hook.transform.position);
+    }
+    private void StopSwing()
+    {
+        lr.positionCount = 0;
+        gun.transform.rotation = new Quaternion(0, 0, 0, 0);
+        swinging = false;
+        Destroy(joint);
+    }
+    private void DrawRope(Vector3 start, Vector3 stop)
+    {
+        lr.SetPosition(0, start);
+        lr.SetPosition(1, stop);
+    }
+
+    //UI
     public void OnPause()
     {
         globals.PauseGame();
     }
-
-   public void BackToMainMenu()
-    {
-        globals.BackToMainMenu();
-    }
+    public void BackToMainMenu()
+   {
+       globals.BackToMainMenu();
+   }
 
 }
