@@ -4,6 +4,8 @@ public class HookScript : MonoBehaviour
 {
     Globals globals;
     MeshRenderer renderer;
+    [SerializeField] Material baseMat;
+    [SerializeField] Material glowMat;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -17,6 +19,7 @@ public class HookScript : MonoBehaviour
         {
             globals.seeHook = true;
             globals.hookSeen = gameObject;
+            renderer.material = glowMat;
         }
     }
 
@@ -26,6 +29,7 @@ public class HookScript : MonoBehaviour
         {
             globals.seeHook = false;
             globals.hookSeen = null;
+            renderer.material = baseMat;
         }
     }
 }
