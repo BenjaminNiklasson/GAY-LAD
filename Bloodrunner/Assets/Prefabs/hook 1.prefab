@@ -194,6 +194,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55abd453f60510c4caecec3f1de6191b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HookScript
+  baseMat: {fileID: 2100000, guid: bd883472338393b4fb321d2723054c51, type: 2}
+  glowMat: {fileID: 2100000, guid: 45f977264fb97d84f9174ad00ed56d1b, type: 2}
 --- !u!65 &1023561386779929662
 BoxCollider:
   m_ObjectHideFlags: 0
