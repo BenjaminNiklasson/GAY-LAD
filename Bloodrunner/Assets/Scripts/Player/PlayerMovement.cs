@@ -131,7 +131,7 @@ public class PlayerMovement : MonoBehaviour
 
         float distanceFromPoint = Vector3.Distance(transform.position, hook.transform.position);
 
-        joint.maxDistance = distanceFromPoint * 0.1f;
+        joint.maxDistance = distanceFromPoint * 0.25f;
         joint.minDistance = distanceFromPoint * 0.8f;
 
         joint.spring = jointSpring;
