@@ -677,30 +677,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1131600867771875096, guid: 78153cd3f98893944a55af7fe5c8d750, type: 3}
-      propertyPath: m_UseWorldSpace
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1131600867771875096, guid: 78153cd3f98893944a55af7fe5c8d750, type: 3}
-      propertyPath: m_MaskInteraction
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1131600867771875096, guid: 78153cd3f98893944a55af7fe5c8d750, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: eed02f193ce5278479bb8237f2d47cac, type: 2}
-    - target: {fileID: 1131600867771875096, guid: 78153cd3f98893944a55af7fe5c8d750, type: 3}
-      propertyPath: m_Parameters.generateLightingData
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1131600867771875096, guid: 78153cd3f98893944a55af7fe5c8d750, type: 3}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].time
-      value: 0.0015258789
-      objectReference: {fileID: 0}
-    - target: {fileID: 1131600867771875096, guid: 78153cd3f98893944a55af7fe5c8d750, type: 3}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
-      value: 0.09740257
-      objectReference: {fileID: 0}
     - target: {fileID: 2897403555380938608, guid: 78153cd3f98893944a55af7fe5c8d750, type: 3}
       propertyPath: m_Camera
       value: 
@@ -750,16 +726,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7515184840274142651, guid: 78153cd3f98893944a55af7fe5c8d750, type: 3}
-      propertyPath: swingSpeed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7515184840274142651, guid: 78153cd3f98893944a55af7fe5c8d750, type: 3}
-      propertyPath: jointSpring
-      value: 4.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7515184840274142651, guid: 78153cd3f98893944a55af7fe5c8d750, type: 3}
-      propertyPath: jointMassScale
-      value: 11.37
+      propertyPath: swingPush
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1599,6 +1567,7 @@ MonoBehaviour:
   m_Script: {fileID: 1642155417}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Entries: []
 --- !u!4 &1045504575
 Transform:
   m_ObjectHideFlags: 19

@@ -229,7 +229,9 @@ MonoBehaviour:
   zipPower: 30
   jointSpring: 4.5
   jointDamper: 7
-  jointMassScale: 4.5
+  jointMassScale: 11.37
+  swingSpeed: 2
+  swingElbow: {fileID: 5243565285430110668, guid: 772e31828f16afd4fa6c7d7cec58a6da, type: 3}
 --- !u!114 &4710942865681563192
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -298,7 +300,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: eed02f193ce5278479bb8237f2d47cac, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -330,8 +332,8 @@ LineRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0
-        value: 1
+        time: 0.0015258789
+        value: 0.09740257
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -377,8 +379,8 @@ LineRenderer:
     textureMode: 3
     textureScale: {x: 1, y: 1}
     shadowBias: 0.03
-    generateLightingData: 0
+    generateLightingData: 1
   m_MaskInteraction: 0
-  m_UseWorldSpace: 1
+  m_UseWorldSpace: 0
   m_Loop: 0
   m_ApplyActiveColorSpace: 1

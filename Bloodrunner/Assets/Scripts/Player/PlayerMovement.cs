@@ -29,7 +29,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float jointSpring = 4.5f;
     [SerializeField] float jointDamper = 7f;
     [SerializeField] float jointMassScale = 4.5f;
-    float swingPush = 3;
+    [SerializeField] float swingPush = 3;
     [SerializeField] float swingSpeed = 3;
     LineRenderer lr;
 
@@ -55,11 +55,7 @@ public class PlayerMovement : MonoBehaviour
         // Get input
         moveDirection = playerControls.ReadValue<Vector3>() * playerSpeed;
         
-        if(Input.GetKeyDown(swingKey) && globals.seeHook && swinging == false)
-        {
-            Swinging();
-        }
-        else if(Input.GetKeyUp(swingKey))
+        if(Input.GetKeyUp(swingKey))
         {
             StopSwing();
         }
@@ -120,14 +116,22 @@ public class PlayerMovement : MonoBehaviour
             rb.linearVelocity += direction * zipPower;
         }
     }
+    void OnSwing()
+    {
+        if (globals.seeHook && swinging == false)
+        {
+            Debug.Log("WEEEEEE");
+            Swinging();
+        }
+    }
     private void Swinging()
     {
         hook = globals.hookSeen;
         swinging = true;
-        playerSpeed = playerSpeed* swingSpeed;
+        playerSpeed = playerSpeed * swingSpeed;
         joint = gameObject.AddComponent<SpringJoint>();
         joint.autoConfigureConnectedAnchor = false;
-        joint.connectedAnchor = globals.hookSeen.transform.position;
+        joint.connectedAnchor = hook.transform.position;
 
         float distanceFromPoint = Vector3.Distance(transform.position, hook.transform.position);
 
