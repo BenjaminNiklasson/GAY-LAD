@@ -54,8 +54,13 @@ public class PlayerMovement : MonoBehaviour
     {
         // Get input
         moveDirection = playerControls.ReadValue<Vector3>() * playerSpeed;
-        
-        if(Input.GetKeyUp(swingKey))
+
+        if (Input.GetKeyDown(swingKey) && globals.seeHook && swinging == false)
+        {
+            Debug.Log("WEEEEEE");
+            Swinging();
+        }
+        if (Input.GetKeyUp(swingKey))
         {
             StopSwing();
         }
@@ -108,20 +113,12 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnZip()
     {
-        
         if (globals.seeHook)
         {
             //ZIPPING!!!
+            rb.linearVelocity = Vector3.zero;
             Vector3 direction = (globals.hookSeen.transform.position - transform.position).normalized;
             rb.linearVelocity += direction * zipPower;
-        }
-    }
-    void OnSwing()
-    {
-        if (globals.seeHook && swinging == false)
-        {
-            Debug.Log("WEEEEEE");
-            Swinging();
         }
     }
     private void Swinging()
@@ -149,11 +146,12 @@ public class PlayerMovement : MonoBehaviour
     }
     private void StopSwing()
     {
+        swinging = false;
         playerSpeed = playerSpeed / swingSpeed;
         Destroy(GetComponent<SpringJoint>());
         lr.positionCount = 0;
         gun.transform.rotation = new Quaternion(0, 0, 0, 0);
-        swinging = false;
+        
     }
     private void DrawRope(Vector3 start, Vector3 stop)
     {
