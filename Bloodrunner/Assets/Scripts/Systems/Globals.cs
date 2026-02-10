@@ -19,7 +19,18 @@ public class Globals : MonoBehaviour
     public Vector3 respawnPoint { get; set; }
     public int deaths { get; set; } = 0;
 
-    //Game stuff
+    PlayerMovement playerMovement;
+    GameObject gun;
+    SpringJoint joint;
+    public GameObject hook;
+    [SerializeField] float jointSpring = 4.5f;
+    [SerializeField] float jointDamper = 7f;
+    [SerializeField] float jointMassScale = 4.5f;
+    [SerializeField] float swingPush = 3;
+    [SerializeField] float swingSpeed = 3;
+    LineRenderer lr;
+
+    //Scene Persist
     private void Awake()
     {
         if (globals == null)
@@ -32,6 +43,8 @@ public class Globals : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    
+    //Game stuff
     public void Start()
     {
         if(deaths == 0)
@@ -41,12 +54,49 @@ public class Globals : MonoBehaviour
 
         currentPlayer.transform.position = respawnPoint;
 
+        playerMovement = currentPlayer.GetComponent<PlayerMovement>();
+
         Physics.IgnoreLayerCollision(3, 0);
+
+        lr = currentPlayer.GetComponent<LineRenderer>();
+        gun = GameObject.FindGameObjectWithTag("Gun");
     }
     public void PlayerDeathGlobal()
     {
         deaths++;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+    public void Swinging()
+    {
+        hook = hookSeen;
+        playerMovement.swinging = true;
+        playerMovement.playerSpeed = playerMovement.playerSpeed * swingSpeed;
+        joint = currentPlayer.AddComponent<SpringJoint>();
+        joint.autoConfigureConnectedAnchor = false;
+        joint.connectedAnchor = hook.transform.position;
+
+        float distanceFromPoint = Vector3.Distance(currentPlayer.transform.position, hook.transform.position);
+
+        joint.maxDistance = distanceFromPoint * 0.25f;
+        joint.minDistance = distanceFromPoint * 0.8f;
+
+        joint.spring = jointSpring;
+        joint.damper = jointDamper;
+        joint.massScale = jointMassScale;
+
+        playerMovement.rb.linearVelocity = playerMovement.rb.linearVelocity * swingPush;
+
+        lr.positionCount = 2;
+        playerMovement.DrawRope(gun.transform.GetChild(0).GetChild(0).position, hook.transform.position);
+    }
+    public void StopSwing()
+    {
+        Debug.Log("KYS");
+        playerMovement.swinging = false;
+        playerMovement.playerSpeed = playerMovement.playerSpeed / swingSpeed;
+        Destroy(currentPlayer.GetComponent<SpringJoint>());
+        lr.positionCount = 0;
+        gun.transform.rotation = new Quaternion(0, 0, 0, 0);
     }
 
     //UI stuff
