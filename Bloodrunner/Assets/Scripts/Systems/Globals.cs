@@ -47,6 +47,7 @@ public class Globals : MonoBehaviour
     //Game stuff
     public void Start()
     {
+        Time.timeScale = 1f;
         if(deaths == 0)
         {
             respawnPoint = currentPlayer.transform.position;
@@ -63,9 +64,18 @@ public class Globals : MonoBehaviour
     }
     public void PlayerDeathGlobal()
     {
+        UIManager.FadeToBlack();
+        Time.timeScale = 0f;
+        StartCoroutine(DeathRestart());
+       
+    }
+    IEnumerator DeathRestart()
+    {
+        yield return new WaitForSecondsRealtime(2f);
         deaths++;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
     public void Swinging()
     {
         hook = hookSeen;
