@@ -60,6 +60,7 @@ public class Globals : MonoBehaviour
     }
     IEnumerator DeathRestart()
     {
+        Debug.Log("Rat");
         yield return new WaitForSecondsRealtime(2f);
         deaths++;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);

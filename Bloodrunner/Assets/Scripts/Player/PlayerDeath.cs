@@ -2,6 +2,10 @@ using UnityEngine;
 
 public class PlayerDeath : MonoBehaviour
 {
+
+    public UIManager UIManager;
+
+
     Globals globals;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
