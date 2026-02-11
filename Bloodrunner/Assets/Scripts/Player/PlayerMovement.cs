@@ -17,7 +17,6 @@ public class PlayerMovement : MonoBehaviour
     Vector3 camRight;
     [SerializeField] float jumpForce = 3;
     bool onGround = false;
-    [SerializeField] float deccelerationSpeed = 3f;
     [SerializeField] float zipPower = 3f;
     Globals globals;
     public bool swinging { get; set; } = false;
@@ -37,7 +36,6 @@ public class PlayerMovement : MonoBehaviour
     {
         playerControls.Disable();
     }
-    // Update is called once per frame
     void Update()
     {
         // Get input
@@ -53,7 +51,6 @@ public class PlayerMovement : MonoBehaviour
         {
             globals.StopSwing();
         }
-        
     }
 
     private void FixedUpdate()
@@ -110,6 +107,16 @@ public class PlayerMovement : MonoBehaviour
             Vector3 direction = (globals.hookSeen.transform.position - transform.position).normalized;
             rb.linearVelocity += direction * zipPower;
         }
+    }
+
+    public void OnReset()
+    {
+        globals.PlayerDeathGlobal();
+    }
+
+    public void OnExplosive()
+    {
+
     }
 
     //UI

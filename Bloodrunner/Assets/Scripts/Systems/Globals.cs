@@ -41,8 +41,6 @@ public class Globals : MonoBehaviour
 
         Physics.IgnoreLayerCollision(3, 0);
 
-        lr = gameObject.GetComponent<LineRenderer>();
-
     }
 
     private void Update()

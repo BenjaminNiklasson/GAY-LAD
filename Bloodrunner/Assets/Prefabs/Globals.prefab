@@ -54,7 +54,7 @@ MonoBehaviour:
   jointDamper: 7
   jointMassScale: 4.5
   swingPush: 1.5
-  swingSpeed: 3
+  swingSpeed: 1.5
 --- !u!120 &6438456713574185606
 LineRenderer:
   serializedVersion: 2
@@ -114,7 +114,7 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.1818161
+        value: 0.19834137
         inSlope: 0
         outSlope: 0
         tangentMode: 0
