@@ -22,7 +22,13 @@ public class OnSceneLoad : MonoBehaviour
         globals.currentPlayer.transform.position = globals.respawnPoint;
         
         globals.playerMovement = globals.currentPlayer.GetComponent<PlayerMovement>();
-        globals.lr = globals.currentPlayer.GetComponent<LineRenderer>();
         globals.gun = GameObject.FindGameObjectWithTag("Gun");
+
+        Invoke("DelayedStart", 0.001f);
+    }
+
+    void DelayedStart()
+    {
+        globals.lr.enabled = false;
     }
 }

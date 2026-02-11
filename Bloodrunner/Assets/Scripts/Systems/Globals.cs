@@ -23,6 +23,7 @@ public class Globals : MonoBehaviour
 
     public PlayerMovement playerMovement { get; set; }
     public GameObject gun { get; set; }
+    bool swinging = false;
     SpringJoint joint;
     public GameObject hook;
     [SerializeField] float jointSpring = 4.5f;
@@ -31,6 +32,7 @@ public class Globals : MonoBehaviour
     [SerializeField] float swingPush = 3;
     [SerializeField] float swingSpeed = 3;
     public LineRenderer lr { get; set; }
+    Transform[] lrPoints;
 
     
     //Game stuff
@@ -48,8 +50,21 @@ public class Globals : MonoBehaviour
 
         Physics.IgnoreLayerCollision(3, 0);
 
-        lr = currentPlayer.GetComponent<LineRenderer>();
+        lr = gameObject.GetComponent<LineRenderer>();
         gun = GameObject.FindGameObjectWithTag("Gun");
+    }
+
+    private void Update()
+    {
+        if (swinging)
+        {
+            DrawRope(gun.transform.GetChild(0).GetChild(0).position, hook.transform.position);
+        }
+    }
+    public void DrawRope(Vector3 start, Vector3 stop)
+    {
+        lr.SetPosition(0, start);
+        lr.SetPosition(1, stop);
     }
     public void PlayerDeathGlobal()
     {
@@ -69,6 +84,7 @@ public class Globals : MonoBehaviour
     public void Swinging()
     {
         hook = hookSeen;
+        swinging = true;
         playerMovement.swinging = true;
         playerMovement.playerSpeed = playerMovement.playerSpeed * swingSpeed;
         joint = currentPlayer.AddComponent<SpringJoint>();
@@ -86,16 +102,16 @@ public class Globals : MonoBehaviour
 
         playerMovement.rb.linearVelocity = playerMovement.rb.linearVelocity * swingPush;
 
+        lr.enabled = true;
         lr.positionCount = 2;
-        playerMovement.DrawRope(gun.transform.GetChild(0).GetChild(0).position, hook.transform.position);
+        DrawRope(gun.transform.GetChild(0).GetChild(0).position, hook.transform.position);
     }
     public void StopSwing()
     {
-        Debug.Log("KYS");
+        lr.enabled = false;
         playerMovement.swinging = false;
         playerMovement.playerSpeed = playerMovement.playerSpeed / swingSpeed;
         Destroy(currentPlayer.GetComponent<SpringJoint>());
-        lr.positionCount = 0;
         gun.transform.rotation = new Quaternion(0, 0, 0, 0);
     }
 
