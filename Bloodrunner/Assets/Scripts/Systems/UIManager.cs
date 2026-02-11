@@ -4,6 +4,8 @@ using TMPro;
 using UnityEngine.UI;
 using UnityEngine.Animations;
 using NUnit.Framework.Internal.Filters;
+
+[SerializeField]
 public class UIManager : MonoBehaviour
 {
 
