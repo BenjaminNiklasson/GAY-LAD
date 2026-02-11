@@ -196,6 +196,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HookScript
   baseMat: {fileID: 2100000, guid: bd883472338393b4fb321d2723054c51, type: 2}
   glowMat: {fileID: 2100000, guid: 45f977264fb97d84f9174ad00ed56d1b, type: 2}
+  standardMesh: {fileID: -4152557102142698196, guid: 31bbd599a5b8be24dad3698dbbc4a3b3, type: 3}
+  hookedMesh: {fileID: -5156557061580409604, guid: fa131ecbc7da5884a8cab5ff2b6f77c7, type: 3}
 --- !u!65 &1023561386779929662
 BoxCollider:
   m_ObjectHideFlags: 0

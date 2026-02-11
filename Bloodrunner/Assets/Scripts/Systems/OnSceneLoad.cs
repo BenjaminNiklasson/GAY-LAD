@@ -8,10 +8,17 @@ using UnityEngine.Profiling;
 public class OnSceneLoad : MonoBehaviour
 {
     Globals globals;
+    ScenePersist scenePersist;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        Invoke("DelayedStart", 0.1f);
+    }
+
+    void DelayedStart()
+    {
+        Time.timeScale = 1f;
         globals = GameObject.FindGameObjectWithTag("Globals").GetComponent<Globals>();
         
         if (globals.deaths == 0)
@@ -24,11 +31,10 @@ public class OnSceneLoad : MonoBehaviour
         globals.playerMovement = globals.currentPlayer.GetComponent<PlayerMovement>();
         globals.gun = GameObject.FindGameObjectWithTag("Gun");
 
-        Invoke("DelayedStart", 0.001f);
-    }
-
-    void DelayedStart()
-    {
+        scenePersist = GameObject.FindGameObjectWithTag("ScenePersist").GetComponent<ScenePersist>();
+        scenePersist.enabled = true;
+        scenePersist.NewScene();
+        
         globals.lr.enabled = false;
     }
 }

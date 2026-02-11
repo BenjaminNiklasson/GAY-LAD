@@ -426,6 +426,10 @@ PrefabInstance:
       propertyPath: currentPlayer
       value: 
       objectReference: {fileID: 1429762003}
+    - target: {fileID: 6438456713574185606, guid: 5bc021473d9d5554887e6634f3592094, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
+      value: 0.19834137
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1135,12 +1139,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -1941,6 +1945,10 @@ PrefabInstance:
     - target: {fileID: 2592709202165734637, guid: 887650ed35a00754b9bd4d34563c3b76, type: 3}
       propertyPath: m_Name
       value: Pause Menu Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 2592709202165734637, guid: 887650ed35a00754b9bd4d34563c3b76, type: 3}
+      propertyPath: m_TagString
+      value: PMCanvas
       objectReference: {fileID: 0}
     - target: {fileID: 3007269601607489864, guid: 887650ed35a00754b9bd4d34563c3b76, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -3036,7 +3044,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6071013586757609140, guid: 3eb4a0e1393d64542b1d02881efbe984, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 59.34473
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6071013586757609140, guid: 3eb4a0e1393d64542b1d02881efbe984, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3056,11 +3064,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6071013586757609140, guid: 3eb4a0e1393d64542b1d02881efbe984, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -905.7864
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6071013586757609140, guid: 3eb4a0e1393d64542b1d02881efbe984, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -535.0989
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6071013586757609140, guid: 3eb4a0e1393d64542b1d02881efbe984, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
