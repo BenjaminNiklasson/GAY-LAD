@@ -37,5 +37,9 @@ public class OnSceneLoad : MonoBehaviour
 
         globals.lr = globals.gameObject.GetComponent<LineRenderer>();
         globals.lr.enabled = false;
+
+        globals.UIManager = GameObject.FindGameObjectWithTag("UIManager").GetComponent<UIManager>();
+        globals.UIManager.fadeInBlackImage = GameObject.FindGameObjectWithTag("BlackCanvas").transform.GetChild(0).gameObject;
+        globals.UIManager.fadeOutBlackImage = GameObject.FindGameObjectWithTag("BlackCanvas").transform.GetChild(1).gameObject;
     }
 }

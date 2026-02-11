@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class Globals : MonoBehaviour
 {
-    public UIManager UIManager;
+    public UIManager UIManager { get; set; }
     public GameObject globalsInstance { get; set; }
     public float startLevelDelay = 2f;
 
