@@ -22,15 +22,12 @@ public class PlayerMovement : MonoBehaviour
     Globals globals;
     public bool swinging { get; set; } = false;
     KeyCode swingKey = KeyCode.Mouse1;
-
-    LineRenderer lr;
     GameObject gun;
 
     private void OnEnable()
     {
         playerInput = GetComponent<PlayerInput>();
         playerControls.Enable();
-        lr = GetComponent<LineRenderer>();
         rb = GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked;
         globals = GameObject.FindGameObjectWithTag("Globals").GetComponent<Globals>();
@@ -45,6 +42,18 @@ public class PlayerMovement : MonoBehaviour
     {
         // Get input
         moveDirection = playerControls.ReadValue<Vector3>() * playerSpeed;
+
+        //Swing
+        if (Input.GetKeyDown(swingKey) && globals.seeHook && swinging == false)
+        {
+            Debug.Log("WEEEEEE");
+            globals.Swinging();
+        }
+        if (Input.GetKeyUp(swingKey) && swinging)
+        {
+            globals.StopSwing();
+        }
+        
     }
 
     private void FixedUpdate()
@@ -61,20 +70,11 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.linearVelocity += moveDirection;
         }
-        if (Input.GetKeyDown(swingKey) && globals.seeHook && swinging == false)
-        {
-            Debug.Log("WEEEEEE");
-            globals.Swinging();
-        }
-        if (Input.GetKeyUp(swingKey) && swinging)
-        {
-            globals.StopSwing();
-        }
+        
         if (swinging)
         {
             gun.transform.LookAt(globals.hook.transform);
         }
-        
     }
 
     public void OnCollisionEnter(Collision collision)
@@ -110,11 +110,6 @@ public class PlayerMovement : MonoBehaviour
             Vector3 direction = (globals.hookSeen.transform.position - transform.position).normalized;
             rb.linearVelocity += direction * zipPower;
         }
-    }
-    public void DrawRope(Vector3 start, Vector3 stop)
-    {
-        lr.SetPosition(0, start);
-        lr.SetPosition(1, stop);
     }
 
     //UI

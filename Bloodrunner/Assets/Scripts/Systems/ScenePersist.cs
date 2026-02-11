@@ -14,6 +14,8 @@ public class ScenePersist : MonoBehaviour
 
     private void Awake()
     {
+        gameObject.GetComponent<ScenePersist>().enabled = true;
+
         if (instance == null)
         {
             instance = gameObject;
