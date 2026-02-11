@@ -6,7 +6,6 @@ public class ScenePersist : MonoBehaviour
 {
     static GameObject instance = null;
     static GameObject globalsInstance = null;
-    static GameObject UIManagerInstance = null;
     static GameObject PMCanvasInstance = null;
     static GameObject VProfile = null;
     static GameObject EventSystem = null;
@@ -22,7 +21,6 @@ public class ScenePersist : MonoBehaviour
     {
         instance = Persist(instance, "ScenePersist");
         globalsInstance = Persist(globalsInstance, "Globals");
-        UIManagerInstance = Persist(UIManagerInstance, "UIManager");
         PMCanvasInstance = Persist(PMCanvasInstance, "PMCanvas");
         VProfile = Persist(VProfile, "VProfile");
         EventSystem = Persist(EventSystem, "EventSystem");

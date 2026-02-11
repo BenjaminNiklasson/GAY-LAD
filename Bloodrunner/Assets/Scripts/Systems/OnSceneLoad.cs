@@ -34,7 +34,8 @@ public class OnSceneLoad : MonoBehaviour
         scenePersist = GameObject.FindGameObjectWithTag("ScenePersist").GetComponent<ScenePersist>();
         scenePersist.enabled = true;
         scenePersist.NewScene();
-        
+
+        globals.lr = globals.gameObject.GetComponent<LineRenderer>();
         globals.lr.enabled = false;
     }
 }
