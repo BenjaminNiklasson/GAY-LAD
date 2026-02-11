@@ -209,6 +209,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 303997866297779037, guid: c5636970774229e4aa9264de7e0889de, type: 3}
+      propertyPath: m_TagString
+      value: VProfile
+      objectReference: {fileID: 0}
     - target: {fileID: 837587401573225279, guid: c5636970774229e4aa9264de7e0889de, type: 3}
       propertyPath: m_LocalPosition.x
       value: 19.97138
@@ -1130,7 +1134,7 @@ GameObject:
   - component: {fileID: 646006238}
   m_Layer: 5
   m_Name: Black Canvas
-  m_TagString: Untagged
+  m_TagString: BlackCanvas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1648,7 +1652,7 @@ GameObject:
   - component: {fileID: 1085324328}
   m_Layer: 0
   m_Name: EventSystem
-  m_TagString: Untagged
+  m_TagString: EventSystem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
