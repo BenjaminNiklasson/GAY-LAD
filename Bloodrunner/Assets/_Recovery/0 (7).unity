@@ -133,7 +133,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 364079552748559107, guid: 4f33efbea40554b47821846f45ee72bf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -35.59
+      value: -34.59
       objectReference: {fileID: 0}
     - target: {fileID: 364079552748559107, guid: 4f33efbea40554b47821846f45ee72bf, type: 3}
       propertyPath: m_LocalPosition.z
@@ -396,7 +396,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 364079552748559107, guid: 4f33efbea40554b47821846f45ee72bf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -35.73
+      value: -34.73
       objectReference: {fileID: 0}
     - target: {fileID: 364079552748559107, guid: 4f33efbea40554b47821846f45ee72bf, type: 3}
       propertyPath: m_LocalPosition.z
@@ -468,6 +468,10 @@ MonoBehaviour:
   m_Script: {fileID: 1642155417}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Entries:
+  - id: 0
+    category: 0
+    gameObject: {fileID: 0}
 --- !u!4 &1045504575
 Transform:
   m_ObjectHideFlags: 19
@@ -513,7 +517,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serializedBakingSet: {fileID: 11400000, guid: 056cc9a172bf35a4c9175d91efb70ae2, type: 2}
-  sceneGUID: e68f4afa12c52d64f98f1b95f9a71b7a
+  sceneGUID: f45b1eae7b613b04d8fb04d13f2515ed
   obsoleteAsset: {fileID: 0}
   obsoleteCellSharedDataAsset: {fileID: 0}
   obsoleteCellSupportDataAsset: {fileID: 0}
@@ -559,7 +563,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a1e78a8bd05be8744af9d7ba28ad66b8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -52.383858
+      value: -51.383858
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a1e78a8bd05be8744af9d7ba28ad66b8, type: 3}
       propertyPath: m_LocalPosition.z
