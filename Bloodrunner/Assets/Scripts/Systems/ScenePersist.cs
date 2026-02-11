@@ -4,110 +4,46 @@ using UnityEngine;
 
 public class ScenePersist : MonoBehaviour
 {
-    static GameObject instance;
-    static GameObject globalsInstance;
-    static GameObject UIManagerInstance;
-    static GameObject PMCanvasInstance;
-    static GameObject VProfile;
-    static GameObject BlackCanvas;
-    static GameObject EventSystem;
+    static GameObject instance = null;
+    static GameObject globalsInstance = null;
+    static GameObject UIManagerInstance = null;
+    static GameObject PMCanvasInstance = null;
+    static GameObject VProfile = null;
+    static GameObject EventSystem = null;
+
 
     private void Awake()
     {
         gameObject.GetComponent<ScenePersist>().enabled = true;
+        NewScene();
+    }
 
-        if (instance == null)
+    public void NewScene()
+    {
+        instance = Persist(instance, "ScenePersist");
+        globalsInstance = Persist(globalsInstance, "Globals");
+        UIManagerInstance = Persist(UIManagerInstance, "UIManager");
+        PMCanvasInstance = Persist(PMCanvasInstance, "PMCanvas");
+        VProfile = Persist(VProfile, "VProfile");
+        EventSystem = Persist(EventSystem, "EventSystem");
+    }
+
+    private GameObject Persist(GameObject gO, string tag)
+    {
+        if (gO == null)
         {
-            instance = gameObject;
-            DontDestroyOnLoad(gameObject);
+            gO = GameObject.FindGameObjectWithTag(tag);
+            DontDestroyOnLoad(gO);
         }
         else
         {
-            Destroy(gameObject);
-        }
-
-        if (globalsInstance == null)
-        {
-            globalsInstance = GameObject.FindGameObjectWithTag("Globals"); ;
-            DontDestroyOnLoad(globalsInstance);
-        }
-        else
-        {
-            List<GameObject> toDestroy = GameObject.FindGameObjectsWithTag("Globals").Where(x => x != globalsInstance).ToList();
+            List<GameObject> toDestroy = GameObject.FindGameObjectsWithTag(tag).Where(x => x != gO).ToList();
             for (int i = 0; i < toDestroy.Count; i++)
             {
                 Destroy(toDestroy[i]);
             }
         }
 
-        if (UIManagerInstance == null)
-        {
-            UIManagerInstance = GameObject.FindGameObjectWithTag("UIManager");
-            DontDestroyOnLoad(UIManagerInstance);
-        }
-        else
-        {
-            List<GameObject> toDestroy = GameObject.FindGameObjectsWithTag("UIManager").Where(x => x != UIManagerInstance).ToList();
-            for (int i = 0; i < toDestroy.Count; i++)
-            {
-                Destroy(toDestroy[i]);
-            }
-        }
-
-        if (PMCanvasInstance == null)
-        {
-            PMCanvasInstance = GameObject.FindGameObjectWithTag("PMCanvas");
-            DontDestroyOnLoad(PMCanvasInstance);
-        }
-        else
-        {
-            List<GameObject> toDestroy = GameObject.FindGameObjectsWithTag("PMCanvas").Where(x => x != PMCanvasInstance).ToList();
-            for (int i = 0; i < toDestroy.Count; i++)
-            {
-                Destroy(toDestroy[i]);
-            }
-        }
-
-        if (VProfile == null)
-        {
-            VProfile = GameObject.FindGameObjectWithTag("VProfile");
-            DontDestroyOnLoad(VProfile);
-        }
-        else
-        {
-            List<GameObject> toDestroy = GameObject.FindGameObjectsWithTag("VProfile").Where(x => x != VProfile).ToList();
-            for (int i = 0; i < toDestroy.Count; i++)
-            {
-                Destroy(toDestroy[i]);
-            }
-        }
-
-        if (BlackCanvas == null)
-        {
-            BlackCanvas = GameObject.FindGameObjectWithTag("BlackCanvas");
-            DontDestroyOnLoad(BlackCanvas);
-        }
-        else
-        {
-            List<GameObject> toDestroy = GameObject.FindGameObjectsWithTag("BlackCanvas").Where(x => x != BlackCanvas).ToList();
-            for (int i = 0; i < toDestroy.Count; i++)
-            {
-                Destroy(toDestroy[i]);
-            }
-        }
-
-        if (EventSystem == null)
-        {
-            EventSystem = GameObject.FindGameObjectWithTag("EventSystem");
-            DontDestroyOnLoad(EventSystem);
-        }
-        else
-        {
-            List<GameObject> toDestroy = GameObject.FindGameObjectsWithTag("EventSystem").Where(x => x != EventSystem).ToList();
-            for (int i = 0; i < toDestroy.Count; i++)
-            {
-                Destroy(toDestroy[i]);
-            }
-        }
+        return gO;
     }
 }

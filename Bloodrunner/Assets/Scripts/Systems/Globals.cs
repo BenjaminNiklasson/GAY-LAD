@@ -38,20 +38,11 @@ public class Globals : MonoBehaviour
     //Game stuff
     public void Start()
     {
-        Time.timeScale = 1f;
-        if(deaths == 0)
-        {
-            respawnPoint = currentPlayer.transform.position;
-        }
-
-        currentPlayer.transform.position = respawnPoint;
-
-        playerMovement = currentPlayer.GetComponent<PlayerMovement>();
 
         Physics.IgnoreLayerCollision(3, 0);
 
         lr = gameObject.GetComponent<LineRenderer>();
-        gun = GameObject.FindGameObjectWithTag("Gun");
+
     }
 
     private void Update()
@@ -84,6 +75,7 @@ public class Globals : MonoBehaviour
     public void Swinging()
     {
         hook = hookSeen;
+        hook.GetComponent<HookScript>().hooked = true;
         swinging = true;
         playerMovement.swinging = true;
         playerMovement.playerSpeed = playerMovement.playerSpeed * swingSpeed;
@@ -109,6 +101,7 @@ public class Globals : MonoBehaviour
     public void StopSwing()
     {
         lr.enabled = false;
+        hook.GetComponent<HookScript>().hooked = false;
         playerMovement.swinging = false;
         playerMovement.playerSpeed = playerMovement.playerSpeed / swingSpeed;
         Destroy(currentPlayer.GetComponent<SpringJoint>());
