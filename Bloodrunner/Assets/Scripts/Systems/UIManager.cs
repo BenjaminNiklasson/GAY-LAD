@@ -22,9 +22,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] private string controlSignSlideIn;
     public Globals globals;
 
-    public GameObject fadeOutBlackImage;
+    public GameObject fadeOutBlackImage { get; set; }
 
-    public GameObject fadeInBlackImage;
+    public GameObject fadeInBlackImage { get; set; }
 
     public float fadeOutTime = 4f;
 
@@ -32,7 +32,6 @@ public class UIManager : MonoBehaviour
     public GameObject pauseBG;
     public GameObject settingsSign;
     public GameObject controlsSign;
-
 
 
     public void FadeToBlack()
