@@ -32,7 +32,7 @@ Material:
   - _EMISSIVE_COLOR_MAP
   - _NORMALMAP_TANGENT_SPACE
   m_InvalidKeywords: []
-  m_LightmapFlags: 0
+  m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: 2225
@@ -265,8 +265,8 @@ Material:
     - _DiffusionProfileAsset: {r: 0, g: 0, b: 0, a: 0}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissiveColor: {r: 0.72876304, g: 0.34328523, b: 0.34328523, a: 2}
-    - _EmissiveColorLDR: {r: 0.6377357, g: 0.4512281, b: 0.4512281, a: 0}
+    - _EmissiveColor: {r: 0.6912323, g: 0.39691305, b: 0.08580249, a: 2}
+    - _EmissiveColorLDR: {r: 0.6226415, g: 0.48279044, b: 0.229085, a: 0}
     - _InvPrimScale: {r: 1, g: 1, b: 0, a: 0}
     - _IridescenceThicknessRemap: {r: 0, g: 1, b: 0, a: 0}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
