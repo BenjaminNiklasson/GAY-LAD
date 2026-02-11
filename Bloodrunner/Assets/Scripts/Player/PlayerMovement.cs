@@ -41,6 +41,11 @@ public class PlayerMovement : MonoBehaviour
         // Get input
         moveDirection = playerControls.ReadValue<Vector3>() * playerSpeed;
 
+        if (Input.GetKeyDown(swingKey))
+        {
+            Debug.Log("Swing");
+        }
+
         //Swing
         if (Input.GetKeyDown(swingKey) && globals.seeHook && swinging == false)
         {
@@ -52,7 +57,6 @@ public class PlayerMovement : MonoBehaviour
             globals.StopSwing();
         }
     }
-
     private void FixedUpdate()
     {
         camForward = GameObject.FindWithTag("MainCamera").transform.forward;

@@ -78,7 +78,7 @@ public class UIManager : MonoBehaviour
         pauseSignLeaveAninmator.Play(pauseSignSlideOut, 0, 0.0f);
         pauseBgAnimator.Play(pauseBgSlideOut, 0, 0.0f);
 
-        StartCoroutine(PauseSignUIOff());
+        StartCoroutine(GameObject.FindGameObjectWithTag("UIManager").GetComponent<UIManager>().PauseSignUIOff());
 
     }
 

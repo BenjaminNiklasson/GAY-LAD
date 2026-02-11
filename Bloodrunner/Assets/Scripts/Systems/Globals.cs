@@ -67,6 +67,7 @@ public class Globals : MonoBehaviour
         Debug.Log("Rat");
         yield return new WaitForSecondsRealtime(2f);
         deaths++;
+        GameObject.FindGameObjectWithTag("ScenePersist").GetComponent<ScenePersist>().deaths = deaths;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 

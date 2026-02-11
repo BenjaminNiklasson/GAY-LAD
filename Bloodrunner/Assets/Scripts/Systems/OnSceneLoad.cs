@@ -11,8 +11,9 @@ public class OnSceneLoad : MonoBehaviour
     ScenePersist scenePersist;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void Awake()
     {
+        Time.timeScale = 1f;
         Invoke("DelayedStart", 0.1f);
     }
 
@@ -20,7 +21,7 @@ public class OnSceneLoad : MonoBehaviour
     {
         Time.timeScale = 1f;
         globals = GameObject.FindGameObjectWithTag("Globals").GetComponent<Globals>();
-        
+        globals.deaths = GameObject.FindGameObjectWithTag("ScenePersist").GetComponent<ScenePersist>().deaths;
         if (globals.deaths == 0)
         {
             globals.respawnPoint = globals.currentPlayer.transform.position;

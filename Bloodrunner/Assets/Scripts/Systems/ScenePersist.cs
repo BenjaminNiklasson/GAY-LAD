@@ -5,10 +5,10 @@ using UnityEngine;
 public class ScenePersist : MonoBehaviour
 {
     static GameObject instance = null;
-    static GameObject globalsInstance = null;
-    static GameObject PMCanvasInstance = null;
-    static GameObject VProfile = null;
-    static GameObject EventSystem = null;
+    //static GameObject globalsInstance = null;
+    //static GameObject PMCanvasInstance = null;
+    //static GameObject VProfile = null;
+    public int deaths { get; set; }
 
 
     private void Awake()
@@ -20,10 +20,9 @@ public class ScenePersist : MonoBehaviour
     public void NewScene()
     {
         instance = Persist(instance, "ScenePersist");
-        globalsInstance = Persist(globalsInstance, "Globals");
-        PMCanvasInstance = Persist(PMCanvasInstance, "PMCanvas");
-        VProfile = Persist(VProfile, "VProfile");
-        EventSystem = Persist(EventSystem, "EventSystem");
+        //globalsInstance = Persist(globalsInstance, "Globals");
+        //PMCanvasInstance = Persist(PMCanvasInstance, "PMCanvas");
+        //VProfile = Persist(VProfile, "VProfile");
     }
 
     private GameObject Persist(GameObject gO, string tag)
