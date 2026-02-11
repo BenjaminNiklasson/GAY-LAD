@@ -14,6 +14,7 @@ TagManager:
   - ScenePersist
   - Gun
   - UIManager
+  - PMCanvas
   layers:
   - Default
   - TransparentFX

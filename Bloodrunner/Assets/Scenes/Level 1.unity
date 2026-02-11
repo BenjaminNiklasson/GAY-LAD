@@ -1996,6 +1996,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pause Menu Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 2592709202165734637, guid: 887650ed35a00754b9bd4d34563c3b76, type: 3}
+      propertyPath: m_TagString
+      value: PMCanvas
+      objectReference: {fileID: 0}
     - target: {fileID: 3007269601607489864, guid: 887650ed35a00754b9bd4d34563c3b76, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
