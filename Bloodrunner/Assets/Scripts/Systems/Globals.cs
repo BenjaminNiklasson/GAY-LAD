@@ -1,4 +1,6 @@
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using Unity.Cinemachine;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -7,7 +9,7 @@ using UnityEngine.SceneManagement;
 public class Globals : MonoBehaviour
 {
     public UIManager UIManager;
-    private GameObject globals;
+    public GameObject globalsInstance { get; set; }
     public float startLevelDelay = 2f;
 
     [SerializeField] GameObject playerPrefab;
@@ -19,8 +21,8 @@ public class Globals : MonoBehaviour
     public Vector3 respawnPoint { get; set; }
     public int deaths { get; set; } = 0;
 
-    PlayerMovement playerMovement;
-    GameObject gun;
+    public PlayerMovement playerMovement { get; set; }
+    public GameObject gun { get; set; }
     SpringJoint joint;
     public GameObject hook;
     [SerializeField] float jointSpring = 4.5f;
@@ -28,25 +30,13 @@ public class Globals : MonoBehaviour
     [SerializeField] float jointMassScale = 4.5f;
     [SerializeField] float swingPush = 3;
     [SerializeField] float swingSpeed = 3;
-    LineRenderer lr;
+    public LineRenderer lr { get; set; }
 
-    //Scene Persist
-    private void Awake()
-    {
-        if (globals == null)
-        {
-            globals = gameObject;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
     
     //Game stuff
     public void Start()
     {
+        Time.timeScale = 1f;
         if(deaths == 0)
         {
             respawnPoint = currentPlayer.transform.position;
@@ -63,9 +53,19 @@ public class Globals : MonoBehaviour
     }
     public void PlayerDeathGlobal()
     {
+        UIManager.FadeToBlack();
+        Time.timeScale = 0f;
+        StartCoroutine(DeathRestart());
+       
+    }
+    IEnumerator DeathRestart()
+    {
+        Debug.Log("Rat");
+        yield return new WaitForSecondsRealtime(2f);
         deaths++;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
     public void Swinging()
     {
         hook = hookSeen;

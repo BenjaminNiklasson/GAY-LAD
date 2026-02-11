@@ -70,7 +70,7 @@ public class PlayerMovement : MonoBehaviour
         {
             globals.StopSwing();
         }
-        else if (swinging)
+        if (swinging)
         {
             gun.transform.LookAt(globals.hook.transform);
         }

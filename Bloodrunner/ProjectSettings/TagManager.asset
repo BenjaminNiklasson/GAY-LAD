@@ -14,6 +14,10 @@ TagManager:
   - ScenePersist
   - Gun
   - UIManager
+  - PMCanvas
+  - BlackCanvas
+  - EventSystem
+  - VProfile
   layers:
   - Default
   - TransparentFX
