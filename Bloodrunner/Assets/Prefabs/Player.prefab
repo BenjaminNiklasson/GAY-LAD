@@ -223,8 +223,7 @@ MonoBehaviour:
     m_Flags: 0
   moveDirection: {x: 0, y: 0, z: 0}
   jumpForce: 6
-  deccelerationSpeed: 1
-  zipPower: 30
+  zipPower: 40
 --- !u!114 &4710942865681563192
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -237,7 +236,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8819eec7c0dde774991fa325007655e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerDeath
-  UIManager: {fileID: 0}
 --- !u!114 &2897403555380938608
 MonoBehaviour:
   m_ObjectHideFlags: 0
