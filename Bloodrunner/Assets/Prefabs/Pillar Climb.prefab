@@ -201,7 +201,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 60.873894, y: -29.214405, z: 46.65043}
-  m_LocalScale: {x: 245.86, y: 245.86, z: 245.86}
+  m_LocalScale: {x: 2.82, y: 2.82, z: 2.82}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4602521738660548596}
@@ -346,7 +346,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5b8d28b7a25efc24bbcde764fed80d6d, type: 2}
+  - {fileID: 2100000, guid: a863481dcd6c945408bd0f1cf3dd7e8c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
