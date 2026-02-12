@@ -23,6 +23,8 @@ public class PlayerMovement : MonoBehaviour
     KeyCode swingKey = KeyCode.Mouse1;
     GameObject gun;
 
+    bool noClip = false;
+
     private void OnEnable()
     {
         playerInput = GetComponent<PlayerInput>();
@@ -96,12 +98,22 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnJump()
     {
-        if (onGround == true)
+        if (onGround == true && !noClip)
         {
             rb.linearVelocity += (new Vector3(0, jumpForce, 0));
         }
+        else if (noClip)
+        {
+            transform.position += new Vector3(0, 1, 0);
+        }
     }
-
+    public void OnLower()
+    {
+        if (noClip)
+        {
+            transform.position -= new Vector3(0, 1, 0);
+        }
+    }
     public void OnZip()
     {
         if (globals.seeHook)
@@ -126,6 +138,22 @@ public class PlayerMovement : MonoBehaviour
     public void OnLevelSkip()
     {
         GameObject.FindGameObjectWithTag("LevelEnd").GetComponent<LevelEnd>().NextLevel();
+    }
+
+    public void OnNoClip()
+    {
+        if (!noClip)
+        {
+            GetComponent<CapsuleCollider>().enabled = false;
+            rb.useGravity = false;
+            noClip = true;
+        }
+        else
+        {
+            GetComponent<CapsuleCollider>().enabled = true;
+            rb.useGravity = true;
+            noClip = false;
+        }
     }
 
     //UI
