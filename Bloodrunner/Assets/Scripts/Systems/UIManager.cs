@@ -35,8 +35,8 @@ public class UIManager : MonoBehaviour
     public GameObject settingsSign;
     public GameObject controlsSign;
 
-    public AudioManager audioManager;
-    public ScenePersist scenePersist;
+    AudioManager audioManager;
+    ScenePersist scenePersist;
 
     public void FadeToBlack()
     {
@@ -49,8 +49,9 @@ public class UIManager : MonoBehaviour
     {
         globals = GameObject.FindGameObjectWithTag("Globals").GetComponent<Globals>();
 
-      
+        scenePersist = GameObject.FindGameObjectWithTag("ScenePersist").GetComponent<ScenePersist>();
 
+        audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
     }
 
     public void FadeInUI()
@@ -137,19 +138,21 @@ public class UIManager : MonoBehaviour
 
     public void MusicCheckBox()
     {
-        
+        Debug.Log("The Button has been diddled");
 
         if (scenePersist.musicCheck)
         {
             scenePersist.musicCheck = false;
             xCheck.SetActive(false);
             audioManager.StopMusic();
+            Debug.Log("Music is TURNED OFF");
         }
         else
         {
             scenePersist.musicCheck = true;
             xCheck.SetActive(true);
             audioManager.PlayMusic();
+            Debug.Log("MUSIC IS HOPEFULLY TURNED *on*");
 
         }
 

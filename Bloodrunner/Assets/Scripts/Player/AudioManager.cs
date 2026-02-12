@@ -8,10 +8,7 @@ public class AudioManager : MonoBehaviour
 
     public bool musicOn = true;
     public UIManager UIManager;
-    public void MusicToggleOn()
-    {
-        musicOn = true;
-    }
+   
 
     public void PlayMusic()
     {
