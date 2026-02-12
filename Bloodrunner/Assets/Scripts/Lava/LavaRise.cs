@@ -5,13 +5,13 @@ public class LavaRise : MonoBehaviour
     [SerializeField] public float lavaRiseSpeed = 1f;
     [SerializeField] float lavaRiseDelay = 1f;
 
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void OnTriggerEnter(Collider other)
     {
-        Invoke("Rise", lavaRiseDelay);
+        if (other.CompareTag("Player"))
+        {
+            Invoke("Rise", lavaRiseDelay);
+        }
     }
-
 
     void Rise()
     {
