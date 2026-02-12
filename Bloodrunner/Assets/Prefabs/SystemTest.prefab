@@ -33,7 +33,7 @@ RectTransform:
   m_Father: {fileID: 630654038240103384}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -545,6 +545,7 @@ Transform:
   m_Children:
   - {fileID: 7457349211560155137}
   - {fileID: 3861866129272656036}
+  - {fileID: 7828024315093319905}
   m_Father: {fileID: 5572375010976288944}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1255360055072736613
@@ -591,10 +592,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08eba03ee08bd9e4ab7c86794706150c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  pauseSignLeaveAninmator: {fileID: 0}
-  pauseBgAnimator: {fileID: 0}
-  settingsSignAnimator: {fileID: 0}
-  controlSignAnimator: {fileID: 0}
+  pauseSignLeaveAninmator: {fileID: 4578061953381699572}
+  pauseBgAnimator: {fileID: 3945514464865983723}
+  settingsSignAnimator: {fileID: 4053623205684309276}
+  controlSignAnimator: {fileID: 3365745865112957400}
   pauseSignSlideOut: PauseSignLeave
   pauseBgSlideOut: PauseBG Leave
   pauseBgSlideIn: PauseBG Animation
@@ -605,13 +606,13 @@ MonoBehaviour:
   fadeOutBlackImage: {fileID: 1423936602518209425}
   fadeInBlackImage: {fileID: 6599529711550929961}
   fadeOutTime: 4
-  xCheck: {fileID: 0}
-  pauseSign: {fileID: 0}
-  pauseBG: {fileID: 0}
-  settingsSign: {fileID: 0}
-  controlsSign: {fileID: 0}
-  audioManager: {fileID: 0}
-  scenePersist: {fileID: 0}
+  xCheck: {fileID: 2152182143354353822}
+  pauseSign: {fileID: 5892949403168107505}
+  pauseBG: {fileID: 7555774995955887702}
+  settingsSign: {fileID: 6082991443261453460}
+  controlsSign: {fileID: 1284231049321846091}
+  audioManager: {fileID: 8829495415422050121}
+  scenePersist: {fileID: 3295216465780321258}
 --- !u!1 &1278964628916644406
 GameObject:
   m_ObjectHideFlags: 0
@@ -958,10 +959,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ScenePersist
   audioManager: {fileID: 0}
   musicCheck: 1
-  bird1Found: 0
-  bird2Found: 0
-  bird3Found: 0
-  bird4Found: 0
 --- !u!1 &1895680883258000518
 GameObject:
   m_ObjectHideFlags: 0
@@ -995,7 +992,7 @@ RectTransform:
   m_Father: {fileID: 5613273462340971092}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1243,10 +1240,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70ca92ed6e6865344ae6a499821cbf8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  scenePersist: {fileID: 0}
-  audioSource: {fileID: 0}
+  scenePersist: {fileID: 3295216465780321258}
+  audioSource: {fileID: 7936249970402418547}
   musicOn: 1
-  UIManager: {fileID: 0}
+  UIManager: {fileID: 8378505391343626705}
 --- !u!1 &2592709202165734637
 GameObject:
   m_ObjectHideFlags: 0
@@ -1265,7 +1262,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &7498104770392141030
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1273,8 +1270,8 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2592709202165734637}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -3.59762}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1287,7 +1284,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -4.92517, y: -1.41926}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
 --- !u!223 &2691201172497493895
@@ -1474,7 +1471,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 8378505391343626705}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: ControlSignActivate
         m_Mode: 1
@@ -1785,7 +1782,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 8378505391343626705}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: ControlSignDeActivate
         m_Mode: 1
@@ -3349,10 +3346,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70ca92ed6e6865344ae6a499821cbf8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  scenePersist: {fileID: 0}
-  audioSource: {fileID: 0}
+  scenePersist: {fileID: 3295216465780321258}
+  audioSource: {fileID: 7936249970402418547}
   musicOn: 1
-  UIManager: {fileID: 0}
+  UIManager: {fileID: 8378505391343626705}
 --- !u!1 &5433206871280532413
 GameObject:
   m_ObjectHideFlags: 0
@@ -3382,7 +3379,7 @@ Transform:
   m_GameObject: {fileID: 5433206871280532413}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 36.90052, y: -57.92032, z: -20.94439}
+  m_LocalPosition: {x: 35.91483, y: -56.38127, z: 35.44207}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3741,7 +3738,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 8378505391343626705}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: SettingsSignDeActivate
         m_Mode: 1
@@ -3857,7 +3854,7 @@ Transform:
   m_GameObject: {fileID: 5732423925533060294}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 36.90052, y: -57.92032, z: -20.94439}
+  m_LocalPosition: {x: 35.91483, y: -56.38127, z: 35.44207}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3883,7 +3880,7 @@ MonoBehaviour:
   m_StreamingVersion: 20241001
   m_LegacyPriority: 0
   Target:
-    TrackingTarget: {fileID: 0}
+    TrackingTarget: {fileID: 6095867348200213911}
     LookAtTarget: {fileID: 0}
     CustomLookAtTarget: 0
   Lens:
@@ -4297,7 +4294,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 8378505391343626705}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: SettingsSignActivate
         m_Mode: 1
@@ -4493,7 +4490,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1302964985659521319}
         m_TargetAssemblyTypeName: Globals, Assembly-CSharp
         m_MethodName: UnpauseGame
         m_Mode: 1
@@ -4596,7 +4593,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2533820554929302213
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5287,7 +5284,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1302964985659521319}
         m_TargetAssemblyTypeName: Globals, Assembly-CSharp
         m_MethodName: BackToMainMenu
         m_Mode: 1
@@ -5745,7 +5742,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bf56f94645766240a18c3d117d63d7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Globals
-  UIManager: {fileID: 8378505391343626705}
   startLevelDelay: 2
   playerPrefab: {fileID: 4345790054281642361, guid: 78153cd3f98893944a55af7fe5c8d750, type: 3}
   currentPlayer: {fileID: 0}
@@ -5940,6 +5936,135 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &8172246187472697865
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7828024315093319905}
+  - component: {fileID: 7936249970402418547}
+  m_Layer: 0
+  m_Name: AudioSource
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7828024315093319905
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8172246187472697865}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8538550055464326431}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &7936249970402418547
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8172246187472697865}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: fe55eda0979975e4bab836234d25a751, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &8282958789026377561
 GameObject:
   m_ObjectHideFlags: 0
@@ -6230,7 +6355,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 8378505391343626705}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: MusicCheckBox
         m_Mode: 1
@@ -6347,7 +6472,7 @@ Transform:
   m_GameObject: {fileID: 8788908321535866296}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.92517, y: 1.41926, z: 3.59762}
+  m_LocalPosition: {x: 3.7358, y: 0.5, z: 4.19522}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
