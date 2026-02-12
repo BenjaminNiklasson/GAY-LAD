@@ -27,7 +27,7 @@ public class UIManager : MonoBehaviour
     public GameObject fadeInBlackImage;
 
     public float fadeOutTime = 4f;
-    public bool isChecked = true;
+    
 
     public GameObject xCheck;
     public GameObject pauseSign;
@@ -36,6 +36,7 @@ public class UIManager : MonoBehaviour
     public GameObject controlsSign;
 
     public AudioManager audioManager;
+    public ScenePersist scenePersist;
 
     public void FadeToBlack()
     {
@@ -48,7 +49,7 @@ public class UIManager : MonoBehaviour
     {
         globals = GameObject.FindGameObjectWithTag("Globals").GetComponent<Globals>();
 
-
+      
 
     }
 
@@ -138,15 +139,15 @@ public class UIManager : MonoBehaviour
     {
         
 
-        if (isChecked)
+        if (scenePersist.musicCheck)
         {
-            isChecked = false;
+            scenePersist.musicCheck = false;
             xCheck.SetActive(false);
             audioManager.StopMusic();
         }
         else
         {
-            isChecked = true;
+            scenePersist.musicCheck = true;
             xCheck.SetActive(true);
             audioManager.PlayMusic();
 
