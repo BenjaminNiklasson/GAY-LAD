@@ -84,17 +84,17 @@ public class UIManager : MonoBehaviour
     {
         pauseSignLeaveAninmator.Play(pauseSignSlideOut, 0, 0.0f);
         pauseBgAnimator.Play(pauseBgSlideOut, 0, 0.0f);
-
+        globals.PauseOrUnpauseGame();
         StartCoroutine(PauseSignUIOff());
 
     }
 
     IEnumerator PauseSignUIOff()
     {
-        yield return new WaitForSeconds(1.2f);
+        yield return new WaitForSecondsRealtime(1.2f);
         pauseSign.SetActive(false);
         pauseBG.SetActive(false);
-        globals.PauseOrUnpauseGame();
+        
     }
 
     public void SettingsSignActivate()
