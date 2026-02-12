@@ -1,13 +1,13 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    public ScenePersist scenePersist;
+    ScenePersist scenePersist;
     public AudioSource audioSource;
 
     public bool musicOn = true;
     public UIManager UIManager;
-
     public void MusicToggleOn()
     {
         musicOn = true;
@@ -25,6 +25,7 @@ public class AudioManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        scenePersist = GameObject.FindGameObjectWithTag("ScenePersist").GetComponent<ScenePersist>();
         if (scenePersist.musicCheck)
         {
             audioSource.Play();
