@@ -21,7 +21,8 @@ public class OnSceneLoad : MonoBehaviour
     {
         Time.timeScale = 1f;
         globals = GameObject.FindGameObjectWithTag("Globals").GetComponent<Globals>();
-        globals.deaths = GameObject.FindGameObjectWithTag("ScenePersist").GetComponent<ScenePersist>().deaths;
+        scenePersist = GameObject.FindGameObjectWithTag("ScenePersist").GetComponent<ScenePersist>();
+        globals.deaths = scenePersist.deaths;
         if (globals.deaths == 0)
         {
             globals.respawnPoint = globals.currentPlayer.transform.position;
@@ -32,7 +33,7 @@ public class OnSceneLoad : MonoBehaviour
         globals.playerMovement = globals.currentPlayer.GetComponent<PlayerMovement>();
         globals.gun = GameObject.FindGameObjectWithTag("Gun");
 
-        scenePersist = GameObject.FindGameObjectWithTag("ScenePersist").GetComponent<ScenePersist>();
+        
         scenePersist.enabled = true;
         scenePersist.NewScene();
 

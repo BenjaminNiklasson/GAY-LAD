@@ -16,8 +16,13 @@ public class LevelEnd : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            uiManager.FadeToBlack();
-            globals.StartLevel(nextLevel);
+            NextLevel();
         }
+    }
+
+    public void NextLevel()
+    {
+        uiManager.FadeToBlack();
+        globals.StartLevel(nextLevel);
     }
 }
