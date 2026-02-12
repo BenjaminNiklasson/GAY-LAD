@@ -123,6 +123,11 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
+    public void OnLevelSkip()
+    {
+        GameObject.FindGameObjectWithTag("LevelEnd").GetComponent<LevelEnd>().NextLevel();
+    }
+
     //UI
     public void OnPause()
     {

@@ -18,6 +18,7 @@ TagManager:
   - BlackCanvas
   - EventSystem
   - VProfile
+  - LevelEnd
   layers:
   - Default
   - TransparentFX
