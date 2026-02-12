@@ -9,7 +9,8 @@ public class ScenePersist : MonoBehaviour
     //static GameObject PMCanvasInstance = null;
     //static GameObject VProfile = null;
     public int deaths { get; set; }
-
+    public AudioManager audioManager;
+    public bool musicCheck;
 
     private void Awake()
     {

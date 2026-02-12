@@ -6,6 +6,7 @@ public class AudioManager : MonoBehaviour
     public AudioSource audioSource;
 
     public bool musicOn = true;
+    public UIManager UIManager;
 
     public void MusicToggleOn()
     {
@@ -16,11 +17,15 @@ public class AudioManager : MonoBehaviour
     {
         audioSource.Play();
     }
+    public void StopMusic()
+    {
+        audioSource.Stop();
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        if (musicOn == true)
+        if (scenePersist.musicCheck == true)
         {
             audioSource.Play();
         }
