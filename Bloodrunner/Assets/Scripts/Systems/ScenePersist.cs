@@ -12,6 +12,11 @@ public class ScenePersist : MonoBehaviour
     public AudioManager audioManager;
     public bool musicCheck = true;
 
+    public bool bird1Found = false;
+    public bool bird2Found = false;
+    public bool bird3Found = false;
+    public bool bird4Found = false;
+
     private void Awake()
     {
         gameObject.GetComponent<ScenePersist>().enabled = true;
