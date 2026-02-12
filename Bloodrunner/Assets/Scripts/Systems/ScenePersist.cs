@@ -7,7 +7,7 @@ public class ScenePersist : MonoBehaviour
     static GameObject instance = null;
     public int deaths { get; set; }
     public AudioManager audioManager;
-    public bool musicCheck;
+    public bool musicCheck = true;
 
     public bool bird1Found { get; set; } = false;
     public bool bird2Found { get; set; } = false;
