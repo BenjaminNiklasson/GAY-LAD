@@ -155,6 +155,12 @@ public class Globals : MonoBehaviour
     }
     public void BackToMainMenu()
     {
+        UIManager.FadeToBlack();
+        StartCoroutine(MainMenuDelay());
+    }
+    IEnumerator MainMenuDelay()
+    {
+        yield return new WaitForSecondsRealtime(2f);
         SceneManager.LoadScene(0);
     }
 }
