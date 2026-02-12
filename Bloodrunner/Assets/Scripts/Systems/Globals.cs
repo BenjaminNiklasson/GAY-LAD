@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class Globals : MonoBehaviour
 {
-    public UIManager UIManager { get; set; }
+    public UIManager UIManager;
     public GameObject globalsInstance { get; set; }
     public float startLevelDelay = 2f;
 
@@ -63,11 +63,10 @@ public class Globals : MonoBehaviour
        
     }
     IEnumerator DeathRestart()
-    {
+    {        
         Debug.Log("Rat");
         yield return new WaitForSecondsRealtime(2f);
-        deaths++;
-        GameObject.FindGameObjectWithTag("ScenePersist").GetComponent<ScenePersist>().deaths = deaths;
+        GameObject.FindGameObjectWithTag("ScenePersist").GetComponent<ScenePersist>().deaths++;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 

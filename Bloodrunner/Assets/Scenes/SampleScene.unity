@@ -1566,6 +1566,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ScenePersist
       objectReference: {fileID: 0}
+    - target: {fileID: 7989657790013560337, guid: 5c04027560adb9c46818cc22e759f0aa, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 913313019}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2763,6 +2767,10 @@ PrefabInstance:
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 462101701}
+    - target: {fileID: 8829495415422050121, guid: 37a7682785dccdd429e575c77cd196a0, type: 3}
+      propertyPath: scenePersist
+      value: 
+      objectReference: {fileID: 573010971}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
