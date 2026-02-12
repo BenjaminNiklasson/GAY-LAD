@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    ScenePersist scenePersist;
+    public ScenePersist scenePersist;
     public AudioSource audioSource;
 
     public bool musicOn = true;
@@ -25,7 +25,7 @@ public class AudioManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        if (scenePersist.musicCheck == true)
+        if (scenePersist.musicCheck)
         {
             audioSource.Play();
         }
