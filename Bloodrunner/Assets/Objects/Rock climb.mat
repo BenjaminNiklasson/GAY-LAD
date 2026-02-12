@@ -7,9 +7,9 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Rock
+  m_Name: Rock climb
   m_Shader: {fileID: 4800000, guid: 6e4ae4064600d784cac1e41a9e6f2e59, type: 3}
-  m_Parent: {fileID: 2100000, guid: a863481dcd6c945408bd0f1cf3dd7e8c, type: 2}
+  m_Parent: {fileID: 2100000, guid: f65868b0e5d90654c8c4197bc4f9c268, type: 2}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - _DISABLE_SSR_TRANSPARENT
@@ -48,8 +48,8 @@ Material:
     m_Colors:
     - _BaseColor: {r: 0.81886786, g: 0.81886786, b: 0.81886786, a: 1}
     - _Color: {r: 0.8188679, g: 0.8188679, b: 0.8188679, a: 1}
-    - _EmissiveColor: {r: 0, g: 0, b: 0, a: 1}
-    - _EmissiveColorLDR: {r: 0, g: 0, b: 0, a: 1}
+    - _EmissiveColor: {r: 0.37398195, g: 0.028292531, b: 0.033518657, a: 1}
+    - _EmissiveColorLDR: {r: 0.645283, g: 0.18384477, b: 0.2013236, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &1667967989371061149
