@@ -19,6 +19,7 @@ TagManager:
   - EventSystem
   - VProfile
   - LevelEnd
+  - AudioManager
   layers:
   - Default
   - TransparentFX
