@@ -21,9 +21,6 @@ public class ScenePersist : MonoBehaviour
     public void NewScene()
     {
         instance = Persist(instance, "ScenePersist");
-        //globalsInstance = Persist(globalsInstance, "Globals");
-        //PMCanvasInstance = Persist(PMCanvasInstance, "PMCanvas");
-        //VProfile = Persist(VProfile, "VProfile");
     }
 
     private GameObject Persist(GameObject gO, string tag)

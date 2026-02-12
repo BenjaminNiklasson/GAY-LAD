@@ -63,11 +63,10 @@ public class Globals : MonoBehaviour
        
     }
     IEnumerator DeathRestart()
-    {
+    {        
         Debug.Log("Rat");
         yield return new WaitForSecondsRealtime(2f);
-        deaths++;
-        GameObject.FindGameObjectWithTag("ScenePersist").GetComponent<ScenePersist>().deaths = deaths;
+        GameObject.FindGameObjectWithTag("ScenePersist").GetComponent<ScenePersist>().deaths++;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
