@@ -27,13 +27,15 @@ public class UIManager : MonoBehaviour
     public GameObject fadeInBlackImage;
 
     public float fadeOutTime = 4f;
+    public bool isChecked = true;
 
+    public GameObject xCheck;
     public GameObject pauseSign;
     public GameObject pauseBG;
     public GameObject settingsSign;
     public GameObject controlsSign;
 
-
+    public AudioManager audioManager;
 
     public void FadeToBlack()
     {
@@ -45,6 +47,9 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         globals = GameObject.FindGameObjectWithTag("Globals").GetComponent<Globals>();
+
+
+
     }
 
     public void FadeInUI()
@@ -128,5 +133,28 @@ public class UIManager : MonoBehaviour
         yield return new WaitForSeconds(1.2f);
         controlsSign.SetActive(false);
     }
+
+    public void MusicCheckBox()
+    {
+        
+
+        if (isChecked)
+        {
+            isChecked = false;
+            xCheck.SetActive(false);
+            audioManager.StopMusic();
+        }
+        else
+        {
+            isChecked = true;
+            xCheck.SetActive(true);
+            audioManager.PlayMusic();
+
+        }
+
+
+    }
+
+
 
 }
