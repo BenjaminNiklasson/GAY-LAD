@@ -52,6 +52,9 @@ public class UIManager : MonoBehaviour
         scenePersist = GameObject.FindGameObjectWithTag("ScenePersist").GetComponent<ScenePersist>();
 
         audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
+
+        fadeInBlackImage = GameObject.FindGameObjectWithTag("BlackCanvas").transform.GetChild(0).gameObject;
+        fadeOutBlackImage = GameObject.FindGameObjectWithTag("BlackCanvas").transform.GetChild(1).gameObject;
     }
 
     public void FadeInUI()
