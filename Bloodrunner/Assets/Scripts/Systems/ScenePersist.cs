@@ -13,6 +13,13 @@ public class ScenePersist : MonoBehaviour
     public bool bird2Found { get; set; } = false;
     public bool bird3Found { get; set; } = false;
     public bool bird4Found { get; set; } = false;
+    public bool bird5Found { get; set; } = false;
+
+    public int birdsSaved { get; set; } = 0;
+    public void AddBirdFound()
+    {
+        birdsSaved += 1;
+    }
 
     private void Awake()
     {

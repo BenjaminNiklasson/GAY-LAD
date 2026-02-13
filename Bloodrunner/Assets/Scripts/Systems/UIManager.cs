@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine.UI;
 using UnityEngine.Animations;
 using NUnit.Framework.Internal.Filters;
+using TMPro;
 
 
 public class UIManager : MonoBehaviour
@@ -27,7 +28,8 @@ public class UIManager : MonoBehaviour
     public GameObject fadeInBlackImage;
 
     public float fadeOutTime = 4f;
-    
+
+    public TextMeshProUGUI birdSavedText;
 
     public GameObject xCheck;
     public GameObject pauseSign;
@@ -55,6 +57,10 @@ public class UIManager : MonoBehaviour
 
         fadeInBlackImage = GameObject.FindGameObjectWithTag("BlackCanvas").transform.GetChild(0).gameObject;
         fadeOutBlackImage = GameObject.FindGameObjectWithTag("BlackCanvas").transform.GetChild(1).gameObject;
+        FadeInUI();
+
+        birdSavedText.text = scenePersist.birdsSaved + "/5";
+
     }
 
     public void FadeInUI()

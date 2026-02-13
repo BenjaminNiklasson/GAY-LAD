@@ -29,7 +29,7 @@ public class BirdManager : MonoBehaviour
         {
             bird4.SetActive(true);
         }
-        if (scenePersist.bird1Found && scenePersist.bird2Found && scenePersist.bird3Found && scenePersist.bird4Found)
+        if (scenePersist.bird5Found)
         {
             bird5.SetActive(true);
         }
