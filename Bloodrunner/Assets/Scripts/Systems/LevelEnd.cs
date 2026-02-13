@@ -1,13 +1,15 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelEnd : MonoBehaviour
 {
     Globals globals;
     UIManager uiManager;
-    [SerializeField] string nextLevel;
+    int nextLevel;
 
     private void Start()
     {
+        nextLevel = SceneManager.GetActiveScene().buildIndex + 1;
         uiManager = GameObject.FindGameObjectWithTag("UIManager").GetComponent<UIManager>();
         globals = GameObject.FindGameObjectWithTag("Globals").GetComponent<Globals>();
     }

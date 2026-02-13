@@ -138,7 +138,7 @@ public class Globals : MonoBehaviour
             isPaused = true;
         }
     }
-    public void StartLevel(string sceneName)
+    public void StartLevel(int sceneName)
     {
         List<int> birdsFoundID = new List<int>();
         for (int i = 0; i < birdsFound.Count(); i++)
@@ -155,7 +155,7 @@ public class Globals : MonoBehaviour
         StartCoroutine(StartLevelRoutine(sceneName));
     }
     //Starts the StartLevelRoutine.
-    IEnumerator StartLevelRoutine(string sceneName)
+    IEnumerator StartLevelRoutine(int sceneName)
     {
         //Calls the ui Manager to trigger the fade to black effect.
         UIManager.FadeToBlack();
