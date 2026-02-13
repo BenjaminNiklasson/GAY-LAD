@@ -116,7 +116,7 @@ public class PlayerMovement : MonoBehaviour
     }
     public void OnZip()
     {
-        if (globals.seeHook)
+        if (globals.hookSeen != null)
         {
             //ZIPPING!!!
             rb.linearVelocity = Vector3.zero;
