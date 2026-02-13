@@ -48,16 +48,16 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log("Swing");
         }
 
-        //Swing
-        if (Input.GetKeyDown(swingKey) && globals.seeHook && swinging == false)
-        {
-            Debug.Log("WEEEEEE");
-            globals.Swinging();
-        }
-        if (Input.GetKeyUp(swingKey) && swinging)
-        {
-            globals.StopSwing();
-        }
+        ////Swing
+        //if (Input.GetKeyDown(swingKey) && globals.seeHook && swinging == false)
+        //{
+        //    Debug.Log("WEEEEEE");
+        //    globals.Swinging();
+        //}
+        //if (Input.GetKeyUp(swingKey) && swinging)
+        //{
+        //    globals.StopSwing();
+        //}
     }
     private void FixedUpdate()
     {

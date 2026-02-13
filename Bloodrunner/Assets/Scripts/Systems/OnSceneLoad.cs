@@ -19,6 +19,7 @@ public class OnSceneLoad : MonoBehaviour
 
     void DelayedStart()
     {
+        Debug.Log("Delayed!!!!");
         Time.timeScale = 1f;
         globals = GameObject.FindGameObjectWithTag("Globals").GetComponent<Globals>();
         scenePersist = GameObject.FindGameObjectWithTag("ScenePersist").GetComponent<ScenePersist>();
