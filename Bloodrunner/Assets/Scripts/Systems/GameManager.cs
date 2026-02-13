@@ -15,14 +15,14 @@ public class GameManager : MonoBehaviour
 
 
     //Starts a coroutine for timing.
-    public void StartLevel(string sceneName)
+    public void StartLevel(int sceneName)
     {
 
         StartCoroutine(StartLevelRoutine(sceneName));
     }
 
     //Starts the StartLevelRoutine.
-    IEnumerator StartLevelRoutine(string sceneName)
+    IEnumerator StartLevelRoutine(int sceneName)
     {
         //Calls the ui Manager to trigger the fade to black effect.
         uiManager.FadeToBlack();
@@ -30,7 +30,6 @@ public class GameManager : MonoBehaviour
 
         //Waits the amount of time designated at the startLevelDelay float variable.
         yield return new WaitForSeconds(startLevelDelay);
-
         SceneManager.LoadScene(sceneName);
     }
 
