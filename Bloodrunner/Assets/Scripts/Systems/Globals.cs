@@ -30,15 +30,17 @@ public class Globals : MonoBehaviour
     [SerializeField] float swingPush = 3;
     [SerializeField] float swingSpeed = 3;
     public LineRenderer lr { get; set; }
-    Transform[] lrPoints;
+
+    public bool[] birdsFound { get; set; } = { false, false, false, false, false };
+
+    ScenePersist scenePersist;
 
     
     //Game stuff
     public void Start()
     {
-
         Physics.IgnoreLayerCollision(3, 0);
-
+        scenePersist = GameObject.FindGameObjectWithTag("ScenePersist").GetComponent<ScenePersist>();
     }
 
     private void Update()
@@ -64,7 +66,7 @@ public class Globals : MonoBehaviour
     { 
         Debug.Log("Rat");
         yield return new WaitForSecondsRealtime(2f);
-        GameObject.FindGameObjectWithTag("ScenePersist").GetComponent<ScenePersist>().deaths++;
+        scenePersist.deaths++;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
@@ -138,6 +140,18 @@ public class Globals : MonoBehaviour
     }
     public void StartLevel(string sceneName)
     {
+        List<int> birdsFoundID = new List<int>();
+        for (int i = 0; i < birdsFound.Count(); i++)
+        {
+            if (birdsFound[i]) 
+            { 
+                birdsFoundID.Add(i); 
+            }
+        }
+        for (int i = 0; i < birdsFoundID.Count(); i++)
+        {
+            scenePersist.birdsFound[i] = true;
+        }
         StartCoroutine(StartLevelRoutine(sceneName));
     }
     //Starts the StartLevelRoutine.

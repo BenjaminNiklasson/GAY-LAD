@@ -3,18 +3,19 @@ using UnityEngine;
 public class BirdScript : MonoBehaviour
 {
     [SerializeField] int birdID;
-    ScenePersist sp;
+    Globals globals;
+
     private void Start()
     {
-        sp = GameObject.FindGameObjectWithTag("ScenePersist").GetComponent<ScenePersist>();
-        if (sp.birdsFound[birdID] == true)
+        globals = GameObject.FindGameObjectWithTag("Globals").GetComponent<Globals>();
+        if (globals.birdsFound[birdID] == true)
         {
             Destroy(gameObject);
         }
     }
     private void OnTriggerEnter(Collider other)
     {
-        sp.birdsFound[birdID] = true;
+        globals.birdsFound[birdID] = true;
         Destroy(gameObject);
     }
 }
