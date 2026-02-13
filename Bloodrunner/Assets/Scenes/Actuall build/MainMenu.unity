@@ -2924,7 +2924,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8183757315093371448, guid: 5168e1ba2c510fa4d91c90a03a6bcdd7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1600890947}
   m_SourcePrefab: {fileID: 100100000, guid: 5168e1ba2c510fa4d91c90a03a6bcdd7, type: 3}
 --- !u!1 &806280224
 GameObject:
@@ -5307,6 +5310,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83de53e3de30d6244a14691d84b63f0c, type: 3}
+--- !u!1 &1264457601 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8183757315093371448, guid: 5168e1ba2c510fa4d91c90a03a6bcdd7, type: 3}
+  m_PrefabInstance: {fileID: 780900882}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1265081877
 GameObject:
   m_ObjectHideFlags: 0
@@ -7051,12 +7059,42 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1494925668327962252, guid: 5168e1ba2c510fa4d91c90a03a6bcdd7, type: 3}
   m_PrefabInstance: {fileID: 780900882}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1264457601}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 08eba03ee08bd9e4ab7c86794706150c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+--- !u!114 &1600890947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1264457601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.PlayerInput
+  m_Actions: {fileID: -944628639613478452, guid: ce0047fc25503924dacce3cde6aeedf6, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: Keyboard&Mouse
+  m_DefaultActionMap: b155d357-f7dd-45cd-8e65-0c44fa63854e
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &1645950200
 GameObject:
   m_ObjectHideFlags: 0

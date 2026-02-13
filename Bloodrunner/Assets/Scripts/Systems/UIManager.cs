@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.Animations;
 using NUnit.Framework.Internal.Filters;
 using TMPro;
+using System.Linq;
 
 
 public class UIManager : MonoBehaviour
@@ -168,6 +169,13 @@ public class UIManager : MonoBehaviour
 
     }
 
-
+    public void OnUnlockLevels()
+    {
+        Debug.Log("It did!");
+        for (int i = 0; i < scenePersist.levelsAccessed.Count(); i++)
+        {
+            scenePersist.levelsAccessed[i] = true;
+        }
+    }
 
 }
