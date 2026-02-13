@@ -160,6 +160,13 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    public void StopMove()
+    {
+        rb.linearVelocity = Vector3.zero;
+        rb.useGravity = false;
+        playerControls.Disable();
+    }
+
     //UI
     public void OnPause()
     {

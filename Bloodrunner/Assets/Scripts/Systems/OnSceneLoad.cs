@@ -44,5 +44,7 @@ public class OnSceneLoad : MonoBehaviour
         globals.UIManager = GameObject.FindGameObjectWithTag("UIManager").GetComponent<UIManager>();
         globals.UIManager.fadeInBlackImage = GameObject.FindGameObjectWithTag("BlackCanvas").transform.GetChild(0).gameObject;
         globals.UIManager.fadeOutBlackImage = GameObject.FindGameObjectWithTag("BlackCanvas").transform.GetChild(1).gameObject;
+
+        globals.currentPlayer.GetComponent<PlayerMovement>().playerControls.Enable();
     }
 }
