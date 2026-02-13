@@ -605,7 +605,8 @@ MonoBehaviour:
   globals: {fileID: 1302964985659521319}
   fadeOutBlackImage: {fileID: 1423936602518209425}
   fadeInBlackImage: {fileID: 6599529711550929961}
-  fadeOutTime: 4
+  fadeOutTime: 1
+  birdSavedText: {fileID: 0}
   xCheck: {fileID: 2152182143354353822}
   pauseSign: {fileID: 5892949403168107505}
   pauseBG: {fileID: 7555774995955887702}
@@ -840,7 +841,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1423936602518209425}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 59.34473}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -848,7 +849,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -905.7864, y: -535.0989}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1920, y: 1090}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1499698901860974207
@@ -3568,8 +3569,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5433206871280532413}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 44.440002, y: -27.462008, z: -76.66031}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 88.16261, y: -91.03018, z: 44.39519}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4044,8 +4045,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5732423925533060294}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 44.440002, y: -27.462008, z: -76.66031}
+  m_LocalRotation: {x: 0.050894685, y: 0.94909716, z: -0.21777022, w: 0.22181177}
+  m_LocalPosition: {x: 44.44, y: -27.46201, z: -76.66031}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4122,7 +4123,7 @@ MonoBehaviour:
   ReferenceFrame: 0
   RecenterTarget: 0
   PanAxis:
-    Value: 0
+    Value: 153.69122
     Center: 0
     Range: {x: -180, y: 180}
     Wrap: 1
@@ -4132,7 +4133,7 @@ MonoBehaviour:
       Time: 2
     Restrictions: 0
   TiltAxis:
-    Value: 0
+    Value: 25.84565
     Center: 0
     Range: {x: -70, y: 70}
     Wrap: 0
@@ -4180,7 +4181,7 @@ MonoBehaviour:
         LegacyInput: 
         LegacyGain: 1
         CancelDeltaTime: 0
-      InputValue: 0
+      InputValue: -0
       Driver:
         AccelTime: 0.2
         DecelTime: 0.2

@@ -27,7 +27,7 @@ public class UIManager : MonoBehaviour
 
     public GameObject fadeInBlackImage;
 
-    public float fadeOutTime = 4f;
+    [SerializeField] public float fadeOutTime = 4f;
 
     public TextMeshProUGUI birdSavedText;
 
