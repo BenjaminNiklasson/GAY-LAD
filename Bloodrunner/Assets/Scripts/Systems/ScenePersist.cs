@@ -10,24 +10,22 @@ public class ScenePersist : MonoBehaviour
     public bool musicCheck = true;
 
     public bool[] birdsFound { get; set; } = { false, false, false, false, false, };
-
     public int birdsSaved { get; set; } = 0;
+
+    public bool[] levelsAccessed { get; set; } = { true, false, false };
     public void AddBirdFound()
     {
         birdsSaved += 1;
     }
-
     private void Awake()
     {
         gameObject.GetComponent<ScenePersist>().enabled = true;
         NewScene();
     }
-
     public void NewScene()
     {
         instance = Persist(instance, "ScenePersist");
     }
-
     private GameObject Persist(GameObject gO, string tag)
     {
         if (gO == null)
