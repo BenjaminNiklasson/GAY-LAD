@@ -13,23 +13,23 @@ public class BirdManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        if (scenePersist.bird1Found)
+        if (scenePersist.birdsFound[0])
         {
             bird1.SetActive(true);
         }
-        if (scenePersist.bird2Found)
+        if (scenePersist.birdsFound[1])
         {
             bird2.SetActive(true);
         }
-        if (scenePersist.bird3Found)
+        if (scenePersist.birdsFound[2])
         {
             bird3.SetActive(true);
         }
-        if (scenePersist.bird4Found)
+        if (scenePersist.birdsFound[3])
         {
             bird4.SetActive(true);
         }
-        if (scenePersist.bird5Found)
+        if (scenePersist.birdsFound[4])
         {
             bird5.SetActive(true);
         }

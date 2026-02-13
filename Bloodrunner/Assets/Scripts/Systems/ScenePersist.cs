@@ -9,11 +9,7 @@ public class ScenePersist : MonoBehaviour
     public AudioManager audioManager;
     public bool musicCheck = true;
 
-    public bool bird1Found { get; set; } = false;
-    public bool bird2Found { get; set; } = false;
-    public bool bird3Found { get; set; } = false;
-    public bool bird4Found { get; set; } = false;
-    public bool bird5Found { get; set; } = false;
+    public bool[] birdsFound { get; set; } = { false, false, false, false, false, };
 
     public int birdsSaved { get; set; } = 0;
     public void AddBirdFound()
