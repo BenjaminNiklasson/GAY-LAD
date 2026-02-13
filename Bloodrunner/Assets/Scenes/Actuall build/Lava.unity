@@ -1218,46 +1218,6 @@ PrefabInstance:
       propertyPath: scenePersist
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 8538550055464326431, guid: 453a2264a17eef847b22b1bc8d0ac0a2, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 199.29366
-      objectReference: {fileID: 0}
-    - target: {fileID: 8538550055464326431, guid: 453a2264a17eef847b22b1bc8d0ac0a2, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 12.082172
-      objectReference: {fileID: 0}
-    - target: {fileID: 8538550055464326431, guid: 453a2264a17eef847b22b1bc8d0ac0a2, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -142.20477
-      objectReference: {fileID: 0}
-    - target: {fileID: 8538550055464326431, guid: 453a2264a17eef847b22b1bc8d0ac0a2, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.2541934
-      objectReference: {fileID: 0}
-    - target: {fileID: 8538550055464326431, guid: 453a2264a17eef847b22b1bc8d0ac0a2, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.11986603
-      objectReference: {fileID: 0}
-    - target: {fileID: 8538550055464326431, guid: 453a2264a17eef847b22b1bc8d0ac0a2, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.9502427
-      objectReference: {fileID: 0}
-    - target: {fileID: 8538550055464326431, guid: 453a2264a17eef847b22b1bc8d0ac0a2, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.13437517
-      objectReference: {fileID: 0}
-    - target: {fileID: 8538550055464326431, guid: 453a2264a17eef847b22b1bc8d0ac0a2, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 11.212
-      objectReference: {fileID: 0}
-    - target: {fileID: 8538550055464326431, guid: 453a2264a17eef847b22b1bc8d0ac0a2, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -148.309
-      objectReference: {fileID: 0}
-    - target: {fileID: 8538550055464326431, guid: 453a2264a17eef847b22b1bc8d0ac0a2, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 17.571
-      objectReference: {fileID: 0}
     - target: {fileID: 8788908321535866296, guid: 453a2264a17eef847b22b1bc8d0ac0a2, type: 3}
       propertyPath: m_Name
       value: SystemTest
