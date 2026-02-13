@@ -19,7 +19,6 @@ public class HookScript : MonoBehaviour
     {
         if (other.CompareTag("CrossHair"))
         {
-            globals.seeHook = true;
             globals.hookSeen = gameObject;
             renderer.material = glowMat;
         }
@@ -29,8 +28,10 @@ public class HookScript : MonoBehaviour
     {
         if (other.CompareTag("CrossHair"))
         {
-            globals.seeHook = false;
-            globals.hookSeen = null;
+            if (globals.hookSeen == gameObject)
+            {
+                globals.hookSeen = null;
+            }
             renderer.material = baseMat;
         }
     }

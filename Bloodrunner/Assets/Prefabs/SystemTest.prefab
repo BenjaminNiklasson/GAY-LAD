@@ -611,8 +611,6 @@ MonoBehaviour:
   pauseBG: {fileID: 7555774995955887702}
   settingsSign: {fileID: 6082991443261453460}
   controlsSign: {fileID: 1284231049321846091}
-  audioManager: {fileID: 8829495415422050121}
-  scenePersist: {fileID: 0}
 --- !u!1 &1278964628916644406
 GameObject:
   m_ObjectHideFlags: 0
@@ -1162,7 +1160,7 @@ GameObject:
   - component: {fileID: 8829495415422050121}
   m_Layer: 0
   m_Name: Audio Manager
-  m_TagString: Untagged
+  m_TagString: AudioManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1194,7 +1192,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70ca92ed6e6865344ae6a499821cbf8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  scenePersist: {fileID: 0}
   audioSource: {fileID: 7936249970402418547}
   musicOn: 1
   UIManager: {fileID: 8378505391343626705}
@@ -2673,7 +2670,7 @@ Transform:
   m_GameObject: {fileID: 4345790054281642361}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 93.77, y: 20.5, z: -68.29}
+  m_LocalPosition: {x: 3.6, y: 29.5, z: -115.7}
   m_LocalScale: {x: 0.57574, y: 0.57574, z: 0.57574}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -3164,9 +3161,9 @@ Light:
   serializedVersion: 11
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 438.08008
-  m_Range: 27
-  m_SpotAngle: 90.93692
+  m_Intensity: 1152.0002
+  m_Range: 61.683914
+  m_SpotAngle: 85.099144
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
@@ -3216,7 +3213,7 @@ Light:
   m_ShadowRadius: 0.025
   m_ShadowAngle: 0
   m_LightUnit: 2
-  m_LuxAtDistance: 0.74
+  m_LuxAtDistance: 1.2
   m_EnableSpotReflector: 1
 --- !u!114 &1087558890194576982
 MonoBehaviour:
@@ -3237,7 +3234,7 @@ MonoBehaviour:
   m_LightUnit: 0
   m_LuxAtDistance: 1
   m_Intensity: 0
-  m_InnerSpotPercent: 67.01012
+  m_InnerSpotPercent: 68.790016
   m_SpotIESCutoffPercent: 100
   m_LightDimmer: 1
   m_VolumetricDimmer: 1
@@ -3540,7 +3537,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70ca92ed6e6865344ae6a499821cbf8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  scenePersist: {fileID: 0}
   audioSource: {fileID: 7936249970402418547}
   musicOn: 1
   UIManager: {fileID: 8378505391343626705}
@@ -3573,7 +3569,7 @@ Transform:
   m_GameObject: {fileID: 5433206871280532413}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 134.61, y: -36.46201, z: -29.250313}
+  m_LocalPosition: {x: 44.440002, y: -27.462008, z: -76.66031}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4049,7 +4045,7 @@ Transform:
   m_GameObject: {fileID: 5732423925533060294}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 134.61, y: -36.46201, z: -29.250313}
+  m_LocalPosition: {x: 44.440002, y: -27.462008, z: -76.66031}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

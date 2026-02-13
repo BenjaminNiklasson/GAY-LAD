@@ -48,16 +48,16 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log("Swing");
         }
 
-        //Swing
-        if (Input.GetKeyDown(swingKey) && globals.seeHook && swinging == false)
-        {
-            Debug.Log("WEEEEEE");
-            globals.Swinging();
-        }
-        if (Input.GetKeyUp(swingKey) && swinging)
-        {
-            globals.StopSwing();
-        }
+        ////Swing
+        //if (Input.GetKeyDown(swingKey) && globals.seeHook && swinging == false)
+        //{
+        //    Debug.Log("WEEEEEE");
+        //    globals.Swinging();
+        //}
+        //if (Input.GetKeyUp(swingKey) && swinging)
+        //{
+        //    globals.StopSwing();
+        //}
     }
     private void FixedUpdate()
     {
@@ -116,7 +116,7 @@ public class PlayerMovement : MonoBehaviour
     }
     public void OnZip()
     {
-        if (globals.seeHook)
+        if (globals.hookSeen != null)
         {
             //ZIPPING!!!
             rb.linearVelocity = Vector3.zero;

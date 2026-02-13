@@ -13,8 +13,7 @@ public class Globals : MonoBehaviour
 
     [SerializeField] GameObject playerPrefab;
     [SerializeField] public GameObject currentPlayer;
-    
-    public bool seeHook { get; set; } = false;
+
     public static bool isPaused { get; set; } = false;
     public GameObject hookSeen { get; set; }
     public Vector3 respawnPoint { get; set; }
@@ -44,10 +43,10 @@ public class Globals : MonoBehaviour
 
     private void Update()
     {
-        if (swinging)
-        {
-            DrawRope(gun.transform.GetChild(0).GetChild(0).position, hook.transform.position);
-        }
+        //if (swinging)
+        //{
+        //    DrawRope(gun.transform.GetChild(0).GetChild(0).position, hook.transform.position);
+        //}
     }
     public void DrawRope(Vector3 start, Vector3 stop)
     {
@@ -69,41 +68,41 @@ public class Globals : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    public void Swinging()
-    {
-        hook = hookSeen;
-        hook.GetComponent<HookScript>().hooked = true;
-        swinging = true;
-        playerMovement.swinging = true;
-        playerMovement.playerSpeed = playerMovement.playerSpeed * swingSpeed;
-        joint = currentPlayer.AddComponent<SpringJoint>();
-        joint.autoConfigureConnectedAnchor = false;
-        joint.connectedAnchor = hook.transform.position;
+    //public void Swinging()
+    //{
+    //    hook = hookSeen;
+    //    hook.GetComponent<HookScript>().hooked = true;
+    //    swinging = true;
+    //    playerMovement.swinging = true;
+    //    playerMovement.playerSpeed = playerMovement.playerSpeed * swingSpeed;
+    //    joint = currentPlayer.AddComponent<SpringJoint>();
+    //    joint.autoConfigureConnectedAnchor = false;
+    //    joint.connectedAnchor = hook.transform.position;
 
-        float distanceFromPoint = Vector3.Distance(currentPlayer.transform.position, hook.transform.position);
+    //    float distanceFromPoint = Vector3.Distance(currentPlayer.transform.position, hook.transform.position);
 
-        joint.maxDistance = distanceFromPoint * 0.25f;
-        joint.minDistance = distanceFromPoint * 0.8f;
+    //    joint.maxDistance = distanceFromPoint * 0.25f;
+    //    joint.minDistance = distanceFromPoint * 0.8f;
 
-        joint.spring = jointSpring;
-        joint.damper = jointDamper;
-        joint.massScale = jointMassScale;
+    //    joint.spring = jointSpring;
+    //    joint.damper = jointDamper;
+    //    joint.massScale = jointMassScale;
 
-        playerMovement.rb.linearVelocity = playerMovement.rb.linearVelocity * swingPush;
+    //    playerMovement.rb.linearVelocity = playerMovement.rb.linearVelocity * swingPush;
 
-        lr.enabled = true;
-        lr.positionCount = 2;
-        DrawRope(gun.transform.GetChild(0).GetChild(0).position, hook.transform.position);
-    }
-    public void StopSwing()
-    {
-        lr.enabled = false;
-        hook.GetComponent<HookScript>().hooked = false;
-        playerMovement.swinging = false;
-        playerMovement.playerSpeed = playerMovement.playerSpeed / swingSpeed;
-        Destroy(currentPlayer.GetComponent<SpringJoint>());
-        gun.transform.rotation = new Quaternion(0, 0, 0, 0);
-    }
+    //    lr.enabled = true;
+    //    lr.positionCount = 2;
+    //    DrawRope(gun.transform.GetChild(0).GetChild(0).position, hook.transform.position);
+    //}
+    //public void StopSwing()
+    //{
+    //    lr.enabled = false;
+    //    hook.GetComponent<HookScript>().hooked = false;
+    //    playerMovement.swinging = false;
+    //    playerMovement.playerSpeed = playerMovement.playerSpeed / swingSpeed;
+    //    Destroy(currentPlayer.GetComponent<SpringJoint>());
+    //    gun.transform.rotation = new Quaternion(0, 0, 0, 0);
+    //}
 
     //UI stuff
     public void PauseGame()
