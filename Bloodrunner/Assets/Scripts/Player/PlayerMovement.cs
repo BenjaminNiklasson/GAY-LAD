@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Net.NetworkInformation;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -23,6 +24,8 @@ public class PlayerMovement : MonoBehaviour
     KeyCode swingKey = KeyCode.Mouse1;
     GameObject gun;
 
+    ScenePersist sp;
+
     bool noClip = false;
 
     private void OnEnable()
@@ -33,6 +36,7 @@ public class PlayerMovement : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         globals = GameObject.FindGameObjectWithTag("Globals").GetComponent<Globals>();
         gun = GameObject.FindGameObjectWithTag("Gun");
+        sp = GameObject.FindGameObjectWithTag("ScenePersist").GetComponent<ScenePersist>();
     }
     private void OnDisable()
     {

@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
@@ -11,14 +12,19 @@ public class GameManager : MonoBehaviour
 
     public float startLevelDelay = 2f;
 
-   
+    ScenePersist sp;
 
 
     //Starts a coroutine for timing.
     public void StartLevel(int sceneName)
     {
-
-        StartCoroutine(StartLevelRoutine(sceneName));
+        if (sp.levelsAccessed.Count() > sceneName)
+        {
+            if (sp.levelsAccessed[sceneName - 1] == true)
+            {
+                StartCoroutine(StartLevelRoutine(sceneName));
+            }
+        }
     }
 
     //Starts the StartLevelRoutine.
@@ -36,25 +42,14 @@ public class GameManager : MonoBehaviour
 
 
 
-    public void ExitGame () 
-        {
+    public void ExitGame ()
+    {
         Application.Quit();
         Debug.Log("The application has been quit (Hopefully)");
-        }
-
-
-  
+    }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-      
-      
-
+        sp = GameObject.FindGameObjectWithTag("ScenePersist").GetComponent<ScenePersist>();
     }
 }
