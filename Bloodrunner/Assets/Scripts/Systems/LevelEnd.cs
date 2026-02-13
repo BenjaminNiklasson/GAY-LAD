@@ -23,13 +23,14 @@ public class LevelEnd : MonoBehaviour
         {
             
             NextLevel();
+            
         }
     }
 
     public void NextLevel()
     {
-        sp.levelsAccessed[SceneManager.GetActiveScene().buildIndex-1] = true;
-        Time.timeScale = 0;
+        globals.currentPlayer.GetComponent<PlayerMovement>().StopMove();
+        sp.levelsAccessed[SceneManager.GetActiveScene().buildIndex] = true;
         uiManager.FadeToBlack();
         globals.StartLevel(nextLevel);
     }
