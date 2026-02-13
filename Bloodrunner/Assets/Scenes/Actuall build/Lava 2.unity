@@ -585,6 +585,10 @@ PrefabInstance:
       propertyPath: zipPower
       value: 40
       objectReference: {fileID: 0}
+    - target: {fileID: 7936249970402418547, guid: 453a2264a17eef847b22b1bc8d0ac0a2, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: dc0030c2855d046478c70169e96f0219, type: 3}
     - target: {fileID: 8538550055464326431, guid: 453a2264a17eef847b22b1bc8d0ac0a2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 44.00873
