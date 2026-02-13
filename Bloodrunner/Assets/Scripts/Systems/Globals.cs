@@ -13,8 +13,7 @@ public class Globals : MonoBehaviour
 
     [SerializeField] GameObject playerPrefab;
     [SerializeField] public GameObject currentPlayer;
-    
-    public bool seeHook { get; set; } = false;
+
     public static bool isPaused { get; set; } = false;
     public GameObject hookSeen { get; set; }
     public Vector3 respawnPoint { get; set; }
