@@ -122,6 +122,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Bomb",
+                    "type": "Button",
+                    "id": "af9d4a8f-746d-4c12-9e6b-95f7bb9afa32",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -382,7 +391,7 @@
                     "name": "",
                     "id": "1cf9e46b-54b2-41e8-b62f-56720d008214",
                     "path": "<Mouse>/rightButton",
-                    "interactions": "",
+                    "interactions": "Press(behavior=2)",
                     "processors": "",
                     "groups": "",
                     "action": "Swing",
@@ -452,6 +461,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "UnlockLevels",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "09b76ea3-de51-43fc-8650-ec3a254adbaa",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Bomb",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

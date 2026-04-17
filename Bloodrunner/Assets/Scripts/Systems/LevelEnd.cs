@@ -21,15 +21,15 @@ public class LevelEnd : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            
             NextLevel();
         }
     }
 
     public void NextLevel()
     {
+        globals.currentPlayer.GetComponent<Rigidbody>().linearVelocity = new Vector3();
+        globals.playerMovement.enabled = false;
         sp.levelsAccessed[SceneManager.GetActiveScene().buildIndex-1] = true;
-        Time.timeScale = 0;
         uiManager.FadeToBlack();
         globals.StartLevel(nextLevel);
     }

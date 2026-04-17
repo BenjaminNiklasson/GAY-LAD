@@ -76,12 +76,6 @@ public class UIManager : MonoBehaviour
         fadeInBlackImage.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void PauseGameUIOn()
     {
         pauseSign.SetActive(true);
@@ -171,7 +165,6 @@ public class UIManager : MonoBehaviour
 
     public void OnUnlockLevels()
     {
-        Debug.Log("It did!");
         for (int i = 0; i < scenePersist.levelsAccessed.Count(); i++)
         {
             scenePersist.levelsAccessed[i] = true;

@@ -21,8 +21,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float zipPower = 3f;
     Globals globals;
     public bool swinging { get; set; } = false;
-    KeyCode swingKey = KeyCode.Mouse1;
     GameObject gun;
+
+
+    [SerializeField] GameObject bomb;
+    [SerializeField] float bombPower = 10;
 
     ScenePersist sp;
 
@@ -47,21 +50,6 @@ public class PlayerMovement : MonoBehaviour
         // Get input
         moveDirection = playerControls.ReadValue<Vector3>() * playerSpeed;
 
-        if (Input.GetKeyDown(swingKey))
-        {
-            Debug.Log("Swing");
-        }
-
-        ////Swing
-        //if (Input.GetKeyDown(swingKey) && globals.seeHook && swinging == false)
-        //{
-        //    Debug.Log("WEEEEEE");
-        //    globals.Swinging();
-        //}
-        //if (Input.GetKeyUp(swingKey) && swinging)
-        //{
-        //    globals.StopSwing();
-        //}
     }
     private void FixedUpdate()
     {
@@ -83,7 +71,6 @@ public class PlayerMovement : MonoBehaviour
             gun.transform.LookAt(globals.hook.transform);
         }
     }
-
     public void OnCollisionEnter(Collision collision)
     {
         if (collision.transform.CompareTag("Floor"))
@@ -91,7 +78,6 @@ public class PlayerMovement : MonoBehaviour
             onGround = true;
         }
     }
-
     public void OnCollisionExit(Collision collision)
     {
         if (collision.transform.CompareTag("Floor"))
@@ -99,7 +85,6 @@ public class PlayerMovement : MonoBehaviour
             onGround = false;
         }
     }
-
     public void OnJump()
     {
         if (onGround == true && !noClip)
@@ -128,22 +113,14 @@ public class PlayerMovement : MonoBehaviour
             rb.linearVelocity += direction * zipPower;
         }
     }
-
     public void OnReset()
     {
         globals.PlayerDeathGlobal();
     }
-
-    public void OnExplosive()
-    {
-
-    }
-
     public void OnLevelSkip()
     {
         GameObject.FindGameObjectWithTag("LevelEnd").GetComponent<LevelEnd>().NextLevel();
     }
-
     public void OnNoClip()
     {
         if (!noClip)
@@ -159,6 +136,25 @@ public class PlayerMovement : MonoBehaviour
             noClip = false;
         }
     }
+    public void OnSwing(InputValue button)
+    {
+        Debug.Log("did it");
+        if(button.isPressed == true && globals.hookSeen != null)
+        {
+            Debug.Log("WEEEEE");
+            globals.Swinging();
+        }
+        else
+        {
+            Debug.Log("NOooooo");
+            globals.StopSwing();
+        }
+    }
+    public void OnBomb()
+    {
+        Transform bmbSpawn = GameObject.FindGameObjectWithTag("BombSpawn").transform;
+        Instantiate(bomb, bmbSpawn.position, bmbSpawn.rotation).GetComponent<Rigidbody>().linearVelocity = bmbSpawn.forward * bombPower;
+    }
 
     //UI
     public void OnPause()
@@ -169,5 +165,4 @@ public class PlayerMovement : MonoBehaviour
    {
        globals.BackToMainMenu();
    }
-
 }

@@ -45,7 +45,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bf56f94645766240a18c3d117d63d7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Globals
-  UIManager: {fileID: 0}
   startLevelDelay: 2
   playerPrefab: {fileID: 4345790054281642361, guid: 78153cd3f98893944a55af7fe5c8d750, type: 3}
   currentPlayer: {fileID: 0}
@@ -53,8 +52,8 @@ MonoBehaviour:
   jointSpring: 4.5
   jointDamper: 7
   jointMassScale: 4.5
-  swingPush: 1.5
-  swingSpeed: 1.5
+  swingPush: 2
+  swingSpeed: 2
 --- !u!120 &6438456713574185606
 LineRenderer:
   serializedVersion: 2
@@ -163,5 +162,5 @@ LineRenderer:
     generateLightingData: 0
   m_MaskInteraction: 0
   m_UseWorldSpace: 1
-  m_Loop: 1
+  m_Loop: 0
   m_ApplyActiveColorSpace: 1
