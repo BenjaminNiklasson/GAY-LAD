@@ -165,9 +165,9 @@ public class UIManager : MonoBehaviour
 
     public void OnUnlockLevels()
     {
-        for (int i = 0; i < scenePersist.levelsAccessed.Count(); i++)
+        for (int i = 0; i < scenePersist.levels; i++)
         {
-            scenePersist.levelsAccessed[i] = true;
+            scenePersist.UnlockLevel(i);
         }
     }
 

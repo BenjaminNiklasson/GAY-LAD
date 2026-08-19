@@ -9,15 +9,17 @@ using UnityEngine.SceneManagement;
 public class Globals : MonoBehaviour
 {
     public UIManager UIManager { get; set; }
-    public float startLevelDelay = 2f;
+    public float startLevelDelay = 1f;
 
     [SerializeField] GameObject playerPrefab;
     [SerializeField] public GameObject currentPlayer;
 
     public static bool isPaused { get; set; } = false;
-    public GameObject hookSeen { get; set; }
+    public List<GameObject> hookSeen { get; set; } = new List<GameObject>();
     public Vector3 respawnPoint { get; set; }
     public int deaths { get; set; } = 0;
+
+    ScenePersist sp;
 
     public PlayerMovement playerMovement { get; set; }
     public GameObject gun { get; set; }
@@ -32,15 +34,13 @@ public class Globals : MonoBehaviour
     public LineRenderer lr { get; set; }
 
     public bool[] birdsFound { get; set; } = { false, false, false, false, false };
-
-    ScenePersist scenePersist;
-
     
     //Game stuff
     public void Start()
     {
         Physics.IgnoreLayerCollision(3, 0);
-        scenePersist = GameObject.FindGameObjectWithTag("ScenePersist").GetComponent<ScenePersist>();
+
+        sp = GameObject.FindGameObjectWithTag("ScenePersist").GetComponent<ScenePersist>();
     }
 
     private void LateUpdate()
@@ -66,13 +66,13 @@ public class Globals : MonoBehaviour
     { 
         Debug.Log("Rat");
         yield return new WaitForSecondsRealtime(2f);
-        scenePersist.deaths++;
+        sp.deaths++;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void Swinging()
     {
-        hook = hookSeen;
+        hook = hookSeen.Last();
         hook.GetComponent<HookScript>().hooked = true;
         swinging = true;
         playerMovement.swinging = true;
@@ -90,7 +90,7 @@ public class Globals : MonoBehaviour
         joint.damper = jointDamper;
         joint.massScale = jointMassScale;
 
-        playerMovement.rb.linearVelocity = playerMovement.rb.linearVelocity * swingPush;
+        playerMovement.rb.AddForce(playerMovement.rb.linearVelocity * swingPush);
 
         lr.enabled = true;
         lr.positionCount = 2;
@@ -150,7 +150,7 @@ public class Globals : MonoBehaviour
         }
         for (int i = 0; i < birdsFoundID.Count(); i++)
         {
-            scenePersist.birdsFound[i] = true;
+            sp.birdsFound[i] = true;
         }
         StartCoroutine(StartLevelRoutine(sceneName));
     }

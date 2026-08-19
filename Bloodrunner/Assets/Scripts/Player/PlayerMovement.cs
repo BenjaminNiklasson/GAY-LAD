@@ -10,10 +10,9 @@ public class PlayerMovement : MonoBehaviour
 {
 
     public InputAction playerControls;
-    PlayerInput playerInput;
     public Vector3 moveDirection;
     public Rigidbody rb { get; set; }
-    [SerializeField] public float playerSpeed { get; set; } = 0.5f;
+    public float playerSpeed = 0.5f;
     Vector3 camForward;
     Vector3 camRight;
     [SerializeField] float jumpForce = 3;
@@ -33,7 +32,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnEnable()
     {
-        playerInput = GetComponent<PlayerInput>();
         playerControls.Enable();
         rb = GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked;
@@ -63,9 +61,9 @@ public class PlayerMovement : MonoBehaviour
 
         if (moveDirection != Vector3.zero)
         {
-            rb.linearVelocity += moveDirection;
+            rb.AddForce(moveDirection.normalized * playerSpeed, ForceMode.Force);
         }
-        
+
         if (swinging)
         {
             gun.transform.LookAt(globals.hook.transform);
@@ -89,7 +87,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (onGround == true && !noClip)
         {
-            rb.linearVelocity += (new Vector3(0, jumpForce, 0));
+            rb.AddForce(new Vector3(0, jumpForce, 0));
         }
         else if (noClip)
         {
@@ -105,12 +103,13 @@ public class PlayerMovement : MonoBehaviour
     }
     public void OnZip()
     {
-        if (globals.hookSeen != null)
+        if (globals.hookSeen.Count != 0)
         {
             //ZIPPING!!!
             rb.linearVelocity = Vector3.zero;
-            Vector3 direction = (globals.hookSeen.transform.position - transform.position).normalized;
-            rb.linearVelocity += direction * zipPower;
+            rb.angularVelocity = Vector3.zero;
+            Vector3 direction = (globals.hookSeen.Last().transform.position - transform.position).normalized;
+            rb.AddForce(direction * zipPower);
         }
     }
     public void OnReset()

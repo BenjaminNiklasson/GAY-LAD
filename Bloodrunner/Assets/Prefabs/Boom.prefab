@@ -104,7 +104,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BoomScript
   destroyDelay: 0.25
-  force: 25
+  force: 3000
+  radius: 10
 --- !u!135 &2400415520547036646
 SphereCollider:
   m_ObjectHideFlags: 0

@@ -6,8 +6,8 @@ public class LevelEnd : MonoBehaviour
 {
     Globals globals;
     UIManager uiManager;
-    int nextLevel;
     ScenePersist sp;
+    int nextLevel;
 
     private void Start()
     {
@@ -21,16 +21,24 @@ public class LevelEnd : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            NextLevel();
+            if (nextLevel >= SceneManager.sceneCountInBuildSettings)
+            {
+                uiManager.FadeToBlack();
+                Cursor.lockState = CursorLockMode.None;
+                globals.BackToMainMenu();
+            }
+            else
+            {
+                NextLevel();
+            }
         }
     }
 
     public void NextLevel()
     {
-        globals.currentPlayer.GetComponent<Rigidbody>().linearVelocity = new Vector3();
+        globals.playerMovement.rb.linearVelocity = Vector3.zero;
         globals.playerMovement.enabled = false;
-        sp.levelsAccessed[SceneManager.GetActiveScene().buildIndex-1] = true;
-        uiManager.FadeToBlack();
+        sp.UnlockLevel(nextLevel);
         globals.StartLevel(nextLevel);
     }
 }

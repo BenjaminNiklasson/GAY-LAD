@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Actuall build/Lava 2.unity
     guid: d773346f5d832634bb20f69541cc9ec4
+  - enabled: 1
+    path: Assets/Scenes/Actuall build/Lava 3.unity
+    guid: ee246b240f7ee534e8f374901be911e0
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: ce0047fc25503924dacce3cde6aeedf6, type: 3}
   m_UseUCBPForAssetBundles: 0

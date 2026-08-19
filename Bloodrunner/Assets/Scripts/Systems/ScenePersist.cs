@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ScenePersist : MonoBehaviour
 {
@@ -12,7 +13,10 @@ public class ScenePersist : MonoBehaviour
     public bool[] birdsFound { get; set; } = { false, false, false, false, false, };
     public int birdsSaved { get; set; } = 0;
 
-    public bool[] levelsAccessed { get; set; } = { true, false, false };
+    private bool[] levelsAccessed { get; set; } = { true, true, false, false };
+
+    public int levels { get { return levelsAccessed.Count(); } }
+
     public void AddBirdFound()
     {
         birdsSaved += 1;
@@ -26,11 +30,22 @@ public class ScenePersist : MonoBehaviour
     {
         instance = Persist(instance, "ScenePersist");
     }
+
+    public void UnlockLevel(int levelName)
+    {
+        levelsAccessed[levelName] = true;
+    }
+
+    public bool LevelUnlocked(int levelName)
+    {
+        return levelsAccessed[levelName];
+    }
+
     private GameObject Persist(GameObject gO, string tag)
     {
         if (gO == null)
         {
-            gO = GameObject.FindGameObjectWithTag(tag);
+            gO = gameObject;
             DontDestroyOnLoad(gO);
         }
         else

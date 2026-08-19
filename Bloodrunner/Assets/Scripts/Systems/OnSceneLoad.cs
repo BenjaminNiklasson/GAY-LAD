@@ -33,6 +33,7 @@ public class OnSceneLoad : MonoBehaviour
         globals.playerMovement = globals.currentPlayer.GetComponent<PlayerMovement>();
         globals.gun = GameObject.FindGameObjectWithTag("Gun");
 
+        globals.hookSeen.Clear();
         
         scenePersist.enabled = true;
         scenePersist.NewScene();

@@ -5,6 +5,7 @@ public class BoomScript : MonoBehaviour
 {
     [SerializeField] float destroyDelay = 1.5f;
     [SerializeField] float force = 20f;
+    [SerializeField] float radius = 100f;
     void Start()
     {
         Invoke("DestroySelf", destroyDelay);
@@ -17,7 +18,7 @@ public class BoomScript : MonoBehaviour
         {
             multi = 0;
         }
-        rb.linearVelocity = direction * multi;
+        rb.AddExplosionForce(force, transform.position, radius);
     }
 
     private void DestroySelf()

@@ -18,9 +18,9 @@ public class GameManager : MonoBehaviour
     //Starts a coroutine for timing.
     public void StartLevel(int sceneName)
     {
-        if (sp.levelsAccessed.Count() > sceneName)
+        if (sp.levels > sceneName)
         {
-            if (sp.levelsAccessed[sceneName - 1] == true)
+            if (sp.LevelUnlocked(sceneName) == true)
             {
                 StartCoroutine(StartLevelRoutine(sceneName));
             }

@@ -746,7 +746,13 @@ PlayerSettings:
   XboxOneOverrideIdentityPublisher: 
   vrEditorSettings: {}
   cloudServicesEnabled:
+    Build: 0
+    Game Performance: 0
+    Legacy Analytics: 0
+    Purchasing: 0
+    UDP: 0
     UNet: 1
+    Unity Ads: 0
   luminIcon:
     m_Name: 
     m_ModelFolderPath: 
@@ -768,11 +774,11 @@ PlayerSettings:
   captureStartupLogs: {}
   activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: 3058e357-97d2-403c-8d69-87bdf8e3857b
+  cloudProjectId: dc01fe0a-56af-47b6-b49f-0fd15d46b145
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
   projectName: Bloodrunner
-  organizationId: unity_bf0ba614721350ed402d
+  organizationId: unity_c82f29793dad42d71fbb
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}
